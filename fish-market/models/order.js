@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-const fishSchema = require('./fish');
+const fish = require('./fish');
 const Schema = mongoose.Schema;
 
 const lineItemSchema = new Schema ({
     quantity: {type: Number, default: 1},
-    item: fishSchema,
+    item: fish,
 },{
     timestamps: true,
     toJSON: {virtuals: true}
