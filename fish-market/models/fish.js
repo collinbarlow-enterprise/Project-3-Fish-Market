@@ -12,6 +12,7 @@ const fishSchema = new Schema({
   taste: String,
   texture: String,
   imgUrl: String,
+  price: {type: Number, default: function() {return Math.floor(Math.random()*100)}}
 });
 
 module.exports = mongoose.model("Fish", fishSchema)
