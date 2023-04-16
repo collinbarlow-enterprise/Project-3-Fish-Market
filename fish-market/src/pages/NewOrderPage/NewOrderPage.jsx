@@ -1,6 +1,8 @@
 import React from 'react'
+import FishComponent from '../../components/Fish/FishComponent'
 
-export default function NewOrderPage() {
+export default function NewOrderPage({fish}) {
+  console.log(fish, 'fish on NewOrder')
   return (
     <>
     <br />
@@ -10,10 +12,10 @@ export default function NewOrderPage() {
     <>current cart - does this display current cart or link to cart page?</>
     <br />
     <h1>Order Fish Here - New Order Page</h1>
-    <>categories</>
+    <>categories - is this a separate component?</>
     <br />
     <br />
-    <>fishies</>
+   <FishComponent fish={fish}/>
     
     
     </>
