@@ -21,6 +21,7 @@ app.use(require('./config/checkToken'));
 // Put all API routes here (before the catch-all)
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/fish', require('./routes/api/fish'));
+app.use('/api/orders', require('./routes/api/orders'));
 // Protect the api routes below from anon users
 
 

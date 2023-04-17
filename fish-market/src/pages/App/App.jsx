@@ -21,6 +21,7 @@ export default function App() {
     }
     getFish();
     console.log(fish, 'after set, fish in getFish function on app.jsx');
+    //only updates once on page load, if I want to have it continually update without causing a loop I need to have some sort of state change within the second argument - maybe an onClick with another state that is tied to a show component
   }, []);
 
   return (

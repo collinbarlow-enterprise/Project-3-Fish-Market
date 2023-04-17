@@ -12,7 +12,6 @@ export default function IndividualFish({fishes}) {
       <div>Taste: {fishes.taste}</div>
       <img src={fishes.imgUrl} style={{height: '200px', width: '200px'}} />
     </div>
-    <br />
     </>
     
   )

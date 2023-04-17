@@ -14,7 +14,7 @@ export default function fish({fish}) {
   return (
     <>
     <div>fishies below: </div>
-    {fishesC} 
+    <div style={{display: 'grid', gridTemplateColumns:'repeat(3, 1fr)'}}>{fishesC} </div>
     </>
     
   )
