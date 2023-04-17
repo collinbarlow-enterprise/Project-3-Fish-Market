@@ -11,15 +11,15 @@ module.exports = {
 // //get to grab cart
 // router.get('/cart', ordersCtrl.cart);
 
-async function cart() {
-    const cart = await Order.getCart(req.user._id)
+async function cart(req, res) {
+    const cart = await Order.getCart(req.user._id);
     res.json(cart)
 }
 
 // //post to add to cart
 // router.post('/cart/items/:id', ordersCtrl.addToCart);
 
-async function addToCart() {
+async function addToCart(req, res) {
     const cart = await Order.getCart(req.user._id);
     await cart.addItemToCart(req.params.id);
     res.json(cart);
@@ -37,7 +37,7 @@ async function setItem(req, res) {
 // //post to checkout for cart
 // router.post('/cart/checkout', ordersCtrl.checkout )
 
-async function checkout() {
+async function checkout(req, res) {
     const cart = await Order.getCart(req.user._id);
     cart.isPaid = true;
     await cart.save();

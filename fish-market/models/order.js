@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-const fish = require('./fish');
+const Fish = require('./fish');
 const Schema = mongoose.Schema;
 
 const lineItemSchema = new Schema ({
     quantity: {type: Number, default: 1},
-    item: fish,
+    item: {type: Schema.Types.ObjectId, ref: Fish},
 },{
     timestamps: true,
     toJSON: {virtuals: true}
@@ -14,7 +14,7 @@ lineItemSchema.virtual('extPrice').get(function() {
     return this.quantity*this.item.price
 })
 
-const orderSchema = newSchema ({
+const orderSchema = new Schema ({
     user: {type: Schema.Types.ObjectId, ref: 'User', required: true},
     lineItems: [lineItemSchema],
     isPaid: {type: Boolean, default: false}
@@ -53,7 +53,7 @@ orderSchema.methods.addItemToCart = async function (itemId) {
     if (lineItem) {
         lineItem.qty +=1;
     } else {
-        const item = await mongoose.model('Item').findById(itemId); 
+        const item = await mongoose.model('Fish').findById(itemId); 
         cart.lineItems.push({item});
     }
     return cart.save();
@@ -61,7 +61,7 @@ orderSchema.methods.addItemToCart = async function (itemId) {
 
 orderSchema.methods.setItemQty = function (itemId, newQty) {
     const cart = this;
-    const lineItem = cart.lineItems.find(line => lineItem.item._id.equals(itemId));
+    const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId));
     if (lineItem && newQty <= 0) {
         lineItem.remove();
     } else if (lineItem) {
