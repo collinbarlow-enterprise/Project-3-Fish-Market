@@ -46,6 +46,12 @@ export default function NewOrderPage() {
     console.error(error);
   }
 }
+
+async function handleChangeQty(itemId, newQty) {
+  console.log(newQty, 'newQty handleChange')
+  const updatedCart = await ordersAPI.setItem(itemId, newQty);
+  setCart(updatedCart)
+}
   
   return (
     <>
@@ -54,7 +60,7 @@ export default function NewOrderPage() {
     <br />
   
     <>current cart in the NewOrderPage:</>
-    <OrderDetail cart={cart}/>
+    <OrderDetail cart={cart} handleChangeQty={handleChangeQty}/>
     <br />
     <h1>Order Fish Here - New Order Page</h1>
     <>categories - is this a separate component?</>

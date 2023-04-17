@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const lineItemSchema = new Schema ({
     quantity: {type: Number, default: 1},
-    item: {type: Schema.Types.ObjectId, ref: Fish},
+    item: {type: Schema.Types.ObjectId, ref: 'Fish'}
 },{
     timestamps: true,
     toJSON: {virtuals: true}
@@ -31,7 +31,7 @@ orderSchema.virtual('orderTotal').get(function () {
 });
 
 orderSchema.virtual('totalQty').get(function () {
-    return this.lineItems.reduce((total, item) => total + item.qty, 0);
+    return this.lineItems.reduce((total, item) => total + item.quantity, 0);
 });
 
 //this one could probably be changed
@@ -51,21 +51,21 @@ orderSchema.methods.addItemToCart = async function (itemId) {
     const cart = this;
     const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId));
     if (lineItem) {
-        lineItem.qty +=1;
+        lineItem.quantity +=1;
     } else {
         const item = await mongoose.model('Fish').findById(itemId); 
         cart.lineItems.push({item});
     }
     return cart.save();
     };
-
+//couldnt use remove b/c I was calling remove on an object that matches the schema rather than an instance. The remove() so needed to update to include a splice method involving the index of the lineItem and removing it via splice. FindIndex is used to find the index of the line item in the lineItems array that matches the itemId and then splice is used to remove that line item from the array 
 orderSchema.methods.setItemQty = function (itemId, newQty) {
     const cart = this;
-    const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId));
-    if (lineItem && newQty <= 0) {
-        lineItem.remove();
-    } else if (lineItem) {
-        lineItem.qty = newQty; 
+    const lineItemIndex = cart.lineItems.findIndex(lineItem => lineItem.item._id.equals(itemId));
+    if (lineItemIndex !==1 && newQty <= 0) {
+        cart.lineItems.splice(lineItemIndex, 1);
+    } else if (lineItemIndex !== -1) {
+        cart.lineItems[lineItemIndex].quantity = newQty; 
     }
     return cart.save();
 };
