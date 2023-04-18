@@ -20,7 +20,7 @@ const orderSchema = new Schema ({
     isPaid: {type: Boolean, default: false}
 }, {
     timestamps: true,
-    toJSON: {virtuasl: true}
+    toJSON: {virtuals: true}
 });
 
 //need to add virtuals and statics to order documents for cart
@@ -45,6 +45,7 @@ orderSchema.statics.getCart = function(userId) {
         {user:userId},
         {upsert: true, new: true}
     )
+    //check notes on why this is needed
     .populate('lineItems.item')
     .exec();
 };

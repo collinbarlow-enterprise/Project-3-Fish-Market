@@ -23,7 +23,8 @@ export default function NewOrderPage() {
 
   async function getCart(){
     const cart = await ordersAPI.getCart();
-    // console.log(cart, 'cart in getCart function on NewOrder')
+    console.log(cart, 'cart in getCart function on NewOrder')
+    console.log(cart.lineItems, 'cart.lineItems in getCart function on NewOrder')
     setCart(cart);
   }
 
