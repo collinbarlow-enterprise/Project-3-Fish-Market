@@ -24,6 +24,8 @@ export default function OrderDetail({cart, handleChangeQty}) {
         <>{ cart.lineItems.length >= 0 ? lineItems : <p>No Items Selected</p>} </>
         <>{ cart.lineItems.length >= 0 ? <p>Total: ${cart.orderTotal}</p> : <p>No Total </p>}</>
         <br/>
+        <a href='./checkout'><button>Checkout {lineItems}</button></a>
+        
         OrderDetail Component
         what does this need? lineitems from the cart, the total in the cart, needs to determine if its been paid, and a handleChangeQty functio needs to be passed down 
       {/* <span>{cart._id}</span> */}

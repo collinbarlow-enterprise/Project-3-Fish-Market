@@ -21,7 +21,7 @@ export default function App() {
             {/* client-side route that renders the component instance if the path matches the url in the address bar */}
             <Route path="/orders/new" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
-            <Route path='/checkout' element={<Checkout />} />
+            <Route path='/orders/checkout' element={<Checkout />} />
             {/* cart page is order detail where we pass in the cart state, and the handleChangeQty and handleCheckout */}
             <>CART: {OrderDetail}</>
           </Routes>
