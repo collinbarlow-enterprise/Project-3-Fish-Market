@@ -12,23 +12,23 @@ export default function NewOrderPage() {
 
   async function getFish() {
     try {
-    console.log('made it inside getFish')
+    // console.log('made it inside getFish')
     const fish = await fishAPI.getAll();
-    console.log(fish, 'before set, fish in getFish function on app.jsx')
+    // console.log(fish, 'before set, fish in getFish function on app.jsx')
     setFish(fish);
-    console.log(fish, 'after set, fish in getFish function on app.jsx');
+    // console.log(fish, 'after set, fish in getFish function on app.jsx');
   } catch (error) {
     console.error(error, 'error for getFish');
   }}
 
   async function getCart(){
     const cart = await ordersAPI.getCart();
-    console.log(cart, 'cart in getCart function on NewOrder')
+    // console.log(cart, 'cart in getCart function on NewOrder')
     setCart(cart);
   }
 
   useEffect(function() {
-    console.log('useEffect has been called')
+    // console.log('useEffect has been called')
     getFish();
     getCart();
   }, []);  
@@ -48,8 +48,11 @@ export default function NewOrderPage() {
 }
 
 async function handleChangeQty(itemId, newQty) {
-  console.log(newQty, 'newQty handleChange')
+  console.log(newQty, 'before newQty handleChange')
+  console.log(itemId, 'before itemId handleChange')
   const updatedCart = await ordersAPI.setItem(itemId, newQty);
+  console.log(itemId, 'after await - itemId handleChange')
+  console.log(newQty, 'after await - newQty handleChange')
   setCart(updatedCart)
 }
   

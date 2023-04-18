@@ -44,7 +44,9 @@ orderSchema.statics.getCart = function(userId) {
         { user: userId, isPaid: false},
         {user:userId},
         {upsert: true, new: true}
-    );
+    )
+    .populate('lineItems.item')
+    .exec();
 };
 
 orderSchema.methods.addItemToCart = async function (itemId) {
