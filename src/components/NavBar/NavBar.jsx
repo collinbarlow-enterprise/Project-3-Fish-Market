@@ -13,6 +13,8 @@ return (
         &nbsp; | &nbsp;
         <Link to="/orders/new">New Order</Link>
         &nbsp; | &nbsp;
+        <Link to="/checkout">Checkout</Link>
+        &nbsp; | &nbsp;
         <span>Welcome, {user.name}</span>
         &nbsp; | &nbsp;
         <Link onClick={handleLogOut} to="">Log Out</Link>
