@@ -71,13 +71,13 @@ function handleShow(setShowCheckout) {
     {showCheckout ? <Checkout cart={cart}/> : null}
     
     <>current cart in the NewOrderPage:</>
-    <OrderDetail cart={cart} handleChangeQty={handleChangeQty} handleShow={handleShow} setShowCheckout={setShowCheckout}/>
+    <OrderDetail cart={cart} handleChangeQty={handleChangeQty} handleShow={handleShow} setShowCheckout={setShowCheckout} showCheckout={showCheckout}/>
     <br />
     <h1>Order Fish Here - New Order Page</h1>
     <>categories - is this a separate component?</>
     <br />
     <br />
-   <FishComponent fish={fish} handleAddToOrder={handleAddToOrder}/>
+   {showCheckout ? null : <FishComponent fish={fish} handleAddToOrder={handleAddToOrder}/>}
     
     
     </>

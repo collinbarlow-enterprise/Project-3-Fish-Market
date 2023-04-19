@@ -2,7 +2,7 @@ import LineItemsOrderDetail from '../LineItemsOrderDetail/LineItemsOrderDetail';
 import './OrderDetail.css';
 import Checkout from '../Checkout/Checkout';
 
-export default function OrderDetail({cart, handleChangeQty, handleShow, setShowCheckout}) {
+export default function OrderDetail({cart, handleChangeQty, handleShow, setShowCheckout, showCheckout}) {
   console.log(cart,'cart in OrderDetail' )
   // console.log(cart.orderTotal, 'orderTotal in orderDetail')
 
@@ -22,8 +22,8 @@ export default function OrderDetail({cart, handleChangeQty, handleShow, setShowC
         {/* <>{lineItems} </>
         <p>Total: ${cart.orderTotal}</p> */}
         {/* refactor so cart.lineItems.length is stored within a variable */}
-        <>{ cart.lineItems.length >=0 ? lineItems : <p>No Items Selected</p>} </>
-        <>{ cart.lineItems.length >=0 ? <p>Total: ${cart.orderTotal}</p> : <p>No Total </p>}</>
+        {showCheckout ? (<p>Nothing to see here</p>) : (
+        <>{ cart.lineItems.length >=0 ? lineItems : <p>No Items Selected</p>} { cart.lineItems.length >=0 ? <p>Total: ${cart.orderTotal}</p> : <p>No Total </p>}</> )}
         <br/>
         <>{ cart.lineItems.length >=1 ? <button onClick={() => handleShow(setShowCheckout)}>Checkout</button> : null }</>
         
