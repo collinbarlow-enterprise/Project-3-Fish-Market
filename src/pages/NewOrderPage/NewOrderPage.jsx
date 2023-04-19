@@ -4,11 +4,13 @@ import FishComponent from '../../components/Fish/FishComponent'
 import OrderDetail from '../../components/OrderDetail/OrderDetail'
 import * as ordersAPI from '../../utilities/orders-api'
 import * as fishAPI from '../../utilities/fish-api'
+import Checkout from '../../components/Checkout/Checkout'
 
 export default function NewOrderPage() {
 
   const [cart, setCart] = useState(null)
   const [fish, setFish] = useState([]);
+  const [showCheckout, setShowCheckout] = useState(null)
 
   async function getFish() {
     try {
@@ -56,15 +58,20 @@ async function handleChangeQty(itemId, newQty) {
   console.log(newQty, 'after await - newQty handleChange')
   setCart(updatedCart)
 }
+
+function handleShow(setShowCheckout) {
+  setShowCheckout((current)=> !current)
+}
   
   return (
     <>
     <br />
     <>logo</>
     <br />
-  
+    {showCheckout ? <Checkout cart={cart}/> : null}
+    
     <>current cart in the NewOrderPage:</>
-    <OrderDetail cart={cart} handleChangeQty={handleChangeQty}/>
+    <OrderDetail cart={cart} handleChangeQty={handleChangeQty} handleShow={handleShow} setShowCheckout={setShowCheckout}/>
     <br />
     <h1>Order Fish Here - New Order Page</h1>
     <>categories - is this a separate component?</>

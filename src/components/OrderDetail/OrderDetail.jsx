@@ -2,7 +2,7 @@ import LineItemsOrderDetail from '../LineItemsOrderDetail/LineItemsOrderDetail';
 import './OrderDetail.css';
 import Checkout from '../Checkout/Checkout';
 
-export default function OrderDetail({cart, handleChangeQty}) {
+export default function OrderDetail({cart, handleChangeQty, handleShow, setShowCheckout}) {
   console.log(cart,'cart in OrderDetail' )
   // console.log(cart.orderTotal, 'orderTotal in orderDetail')
 
@@ -21,10 +21,11 @@ export default function OrderDetail({cart, handleChangeQty}) {
       <div className="section-heading">
         {/* <>{lineItems} </>
         <p>Total: ${cart.orderTotal}</p> */}
-        <>{ cart.lineItems.length >= 0 ? lineItems : <p>No Items Selected</p>} </>
-        <>{ cart.lineItems.length >= 0 ? <p>Total: ${cart.orderTotal}</p> : <p>No Total </p>}</>
+        {/* refactor so cart.lineItems.length is stored within a variable */}
+        <>{ cart.lineItems.length >=0 ? lineItems : <p>No Items Selected</p>} </>
+        <>{ cart.lineItems.length >=0 ? <p>Total: ${cart.orderTotal}</p> : <p>No Total </p>}</>
         <br/>
-        <a href='./checkout'><button>Checkout {lineItems}</button></a>
+        <>{ cart.lineItems.length >=1 ? <button onClick={() => handleShow(setShowCheckout)}>Checkout</button> : null }</>
         
         OrderDetail Component
         what does this need? lineitems from the cart, the total in the cart, needs to determine if its been paid, and a handleChangeQty functio needs to be passed down 
