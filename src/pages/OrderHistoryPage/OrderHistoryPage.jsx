@@ -12,6 +12,7 @@ useEffect(function() {
   async function getPaidOrders() {
     const orders = await ordersAPI.getPaidOrder();
     setPastOrders(orders);
+    console.log(pastOrders, 'pastOrders in ORDERHISTORY')
   }
   getPaidOrders();
 },[]);
@@ -19,9 +20,6 @@ useEffect(function() {
   return (
     <main className="OrderHistoryPage">
       <PastOrders pastOrders={pastOrders}/>
-      <>details of prior orders</>
-      <>running tally of money spent, or number of fish?</>
-
     </main>
   );
 }

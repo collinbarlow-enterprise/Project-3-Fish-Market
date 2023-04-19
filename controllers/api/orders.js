@@ -53,8 +53,22 @@ async function checkout(req, res) {
     res.json(cart);
 }
 
+//when using this.find instead of this.findOne in the static method I am returning an array of documents instead of a single document
+// thus when I try to access the lineItems property in the controller function(or after) the lineItems property doesn't actually exist
+// that explains why I lost so much data and had to use the find method equaling the itemId in the deepest orderHistory componenet
+//to fix this I can either change the static method to this.findONe (whihch would only call one) or I can alter the controller function 
+// that loops through each document and accesses the lineItems property for each one 
+
+//I am looping through the paidCart array that is returned by getPaidCart and then adding the orderTotal property to each cart
+//I am using the ...cart.toJSON() to change the cart from a mongoose document object, to a javascript object which can then be added onto/modified
+//the coma is used to seperate properties from within the object
 async function getPaidCartController(req, res) {
     const paidCart = await Order.getPaidCart(req.user._id);
     console.log(paidCart, 'cart in GETPAIDCART CONTROLLER')
-    res.json(paidCart);
+    const paidCartsWithTotal = paidCart.map(cart => ({
+        ...cart.toJSON(),
+        orderTotal: cart.orderTotal
+    }));
+    console.log(paidCartsWithTotal, 'paid carts with TOTAL in controller')
+    res.json(paidCartsWithTotal);
 }

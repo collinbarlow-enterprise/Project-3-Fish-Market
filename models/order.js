@@ -49,12 +49,16 @@ orderSchema.statics.getCart = function(userId) {
     .populate('lineItems.item')
     .exec();
 };
-
+// need to include populate 'lineItems.item' b/c without that I will only have access to the document id (in this case Fish Id)
+//by using the populate I am telling mongoose to retrieve the referenced 'Fish' documents and replace the objectId with the actual 'Fish'
+//this allows me to access the properties of the 'fish' documents in my virtual and thus allows me to calculate the virtuals 
 orderSchema.statics.getPaidCart = function(userId) {
     console.log('getPaidcart function in ORDER MODEL')
     return this.find(
         {user: userId, isPaid: true},
-    );
+    )
+    .populate('lineItems.item')
+    .exec();
 };
 
 orderSchema.methods.addItemToCart = async function (itemId) {

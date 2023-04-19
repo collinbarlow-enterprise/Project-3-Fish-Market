@@ -20,7 +20,7 @@ export default function NewOrderPage() {
     const fish = await fishAPI.getAll();
     // console.log(fish, 'before set, fish in getFish function on app.jsx')
     setFish(fish);
-    console.log(fish, 'after set, fish in getFish function on app.jsx');
+    // console.log(fish, 'after set, fish in getFish function on NewOrder');
   } catch (error) {
     console.error(error, 'error for getFish');
   }}
