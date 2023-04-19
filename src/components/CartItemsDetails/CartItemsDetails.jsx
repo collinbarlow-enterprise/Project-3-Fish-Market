@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function CartItemsDetails({item}) {
-    console.log(item, 'item in CartDetails')
+    // console.log(item, 'item in CartDetails')
     
   return (
     <div>

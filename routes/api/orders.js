@@ -13,6 +13,6 @@ router.post('/cart/items/:id', ordersCtrl.addToCart);
 router.put('/cart/quantity', ordersCtrl.setItem);
 
 //post to checkout for cart
-router.post('/cart/checkout', ordersCtrl.checkout );
+router.post('/cart/checkout', ordersCtrl.checkout);
 
 module.exports = router

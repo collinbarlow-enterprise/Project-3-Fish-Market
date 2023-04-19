@@ -11,7 +11,7 @@ return (
     <nav>
         <Link to="/orders">Order History</Link>
         &nbsp; | &nbsp;
-        <Link to="/orders/new">New Order</Link>
+        <Link to="/orders/new">Order</Link>
         &nbsp; | &nbsp;
         <Link to="/orders/checkout">Checkout</Link>
         &nbsp; | &nbsp;

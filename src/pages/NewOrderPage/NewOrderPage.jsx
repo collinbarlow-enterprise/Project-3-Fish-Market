@@ -25,9 +25,16 @@ export default function NewOrderPage() {
 
   async function getCart(){
     const cart = await ordersAPI.getCart();
-    console.log(cart, 'cart in getCart function on NewOrder')
-    console.log(cart.lineItems, 'cart.lineItems in getCart function on NewOrder')
+    // console.log(cart, 'cart in getCart function on NewOrder')
+    // console.log(cart.lineItems, 'cart.lineItems in getCart function on NewOrder')
     setCart(cart);
+  }
+
+  async function handleCheckout()  {
+    console.log(cart.isPaid, 'cart is paid BEFORE checkout')
+    await ordersAPI.checkout();
+    console.log(cart.isPaid, 'cart is paid AFTER checkout')
+    // handleShow(setShowCheckout);
   }
 
   useEffect(function() {
@@ -41,9 +48,9 @@ export default function NewOrderPage() {
 
   async function handleAddToOrder(itemId) {
     try { 
-      console.log(itemId, 'itemId before handleAddToOrder')
+      // console.log(itemId, 'itemId before handleAddToOrder')
     const updatedCart = await ordersAPI.addToCart(itemId)
-    console.log(itemId, 'itemId in handleAddToOrder')
+    // console.log(itemId, 'itemId in handleAddToOrder')
     setCart(updatedCart)
   } catch (error) {
     console.error(error);
@@ -51,11 +58,11 @@ export default function NewOrderPage() {
 }
 
 async function handleChangeQty(itemId, newQty) {
-  console.log(newQty, 'before newQty handleChange')
-  console.log(itemId, 'before itemId handleChange')
+  // console.log(newQty, 'before newQty handleChange')
+  // console.log(itemId, 'before itemId handleChange')
   const updatedCart = await ordersAPI.setItem(itemId, newQty);
-  console.log(itemId, 'after await - itemId handleChange')
-  console.log(newQty, 'after await - newQty handleChange')
+  // console.log(itemId, 'after await - itemId handleChange')
+  // console.log(newQty, 'after await - newQty handleChange')
   setCart(updatedCart)
 }
 
@@ -67,20 +74,15 @@ function handleShow(setShowCheckout) {
     <>
     <br />
     <>logo</>
+    {showCheckout ? null : <h1>Order Fish Here - New Order Page</h1>}
     <br />
-    {showCheckout ? <Checkout cart={cart}/> : null}
-    
+    {showCheckout ? <Checkout cart={cart} handleShow={handleShow} setShowCheckout={setShowCheckout} handleCheckout={handleCheckout}/> : null}
     <>current cart in the NewOrderPage:</>
-    <OrderDetail cart={cart} handleChangeQty={handleChangeQty} handleShow={handleShow} setShowCheckout={setShowCheckout} showCheckout={showCheckout}/>
+    {showCheckout ? null : <OrderDetail cart={cart} handleChangeQty={handleChangeQty} handleShow={handleShow} setShowCheckout={setShowCheckout} showCheckout={showCheckout}/> } 
     <br />
-    <h1>Order Fish Here - New Order Page</h1>
     <>categories - is this a separate component?</>
-    <br />
-    <br />
+
    {showCheckout ? null : <FishComponent fish={fish} handleAddToOrder={handleAddToOrder}/>}
-    
-    
     </>
-    
   )
 }

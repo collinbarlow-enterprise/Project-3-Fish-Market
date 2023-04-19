@@ -4,9 +4,10 @@ import * as ordersAPI from '../../utilities/orders-api'
 import LineItemsOrderDetail from '../LineItemsOrderDetail/LineItemsOrderDetail';
 import CartItemsDetails from '../CartItemsDetails/CartItemsDetails';
 
-export default function Checkout({cart}) {
+export default function Checkout({cart, handleShow, setShowCheckout, handleCheckout}) {
 
 console.log(cart, 'cart in Checkout')
+console.log(cart.isPaid, 'cart PAID in CHECKOUT')
 
 if (!cart) return null;
 const cartItems = cart.lineItems.map(item => 
@@ -23,6 +24,7 @@ return (
         <p>checkout componenet info</p>
         <>{cartItems}</>
         <>Total Price: {cart.orderTotal}</>
+        <button onClick={() => {handleCheckout(); setShowCheckout();}}>Checkout</button>
     
     </>
   )

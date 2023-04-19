@@ -2,7 +2,7 @@ import React from 'react'
 import './LineItemsOrderDetail.css'
 
 export default function LineItemsOrderDetail({lineItem, handleChangeQty }) {
-    console.log(lineItem, 'lineItem in lineItemOrder')
+    // console.log(lineItem, 'lineItem in lineItemOrder')
     if (lineItem.quantity > 0){
   return (
     <div className="fishCardOrder">

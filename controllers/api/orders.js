@@ -42,5 +42,4 @@ async function checkout(req, res) {
     cart.isPaid = true;
     await cart.save();
     res.json(cart);
-
 }
