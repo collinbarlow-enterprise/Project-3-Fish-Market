@@ -15,6 +15,10 @@ export function checkout() {
     return sendRequest(`${BASE_URL}/cart/checkout`, 'POST');
 }
 
+export function getPaidOrder() {
+    return sendRequest(`${BASE_URL}/previousOrders`)
+}
+
 //routes from routes/orders
 // //get to grab cart
 // router.get('/cart', ordersCtrl.cart);

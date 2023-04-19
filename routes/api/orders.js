@@ -15,4 +15,7 @@ router.put('/cart/quantity', ordersCtrl.setItem);
 //post to checkout for cart
 router.post('/cart/checkout', ordersCtrl.checkout);
 
+//get /previousOrders 
+router.get('/previousOrders', ordersCtrl.getPaidCartController);
+
 module.exports = router

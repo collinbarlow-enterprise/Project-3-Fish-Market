@@ -4,7 +4,8 @@ module.exports = {
     cart,
     addToCart,
     setItem,
-    checkout
+    checkout,
+    getPaidCartController
 }
 
 
@@ -50,4 +51,10 @@ async function checkout(req, res) {
     await cart.save();
     // console.log(cart, 'cart AFTER SAVE')
     res.json(cart);
+}
+
+async function getPaidCartController(req, res) {
+    const paidCart = await Order.getPaidCart(req.user._id);
+    console.log(paidCart, 'cart in GETPAIDCART CONTROLLER')
+    res.json(paidCart);
 }

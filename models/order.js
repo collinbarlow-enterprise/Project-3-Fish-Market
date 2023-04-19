@@ -50,6 +50,13 @@ orderSchema.statics.getCart = function(userId) {
     .exec();
 };
 
+orderSchema.statics.getPaidCart = function(userId) {
+    console.log('getPaidcart function in ORDER MODEL')
+    return this.find(
+        {user: userId, isPaid: true},
+    );
+};
+
 orderSchema.methods.addItemToCart = async function (itemId) {
     const cart = this;
     const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId));

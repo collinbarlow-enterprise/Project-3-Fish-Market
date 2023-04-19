@@ -24,13 +24,13 @@ export default function FishDetail() {
     getFishDetail();
   }, []);  
 
-  console.log(fishDetail, 'fishDetail in fishDetail' )
+//   console.log(fishDetail, 'fishDetail in fishDetail' )
 
   const { param } = useParams();
-  console.log(param, 'param on fishDetail')
+//   console.log(param, 'param on fishDetail')
 
   const fishParam = fishDetail.find((item) => item.speciesName === param);
-  console.log(fishParam, 'fishParam on fishDetail')
+//   console.log(fishParam, 'fishParam on fishDetail')
 
   return (
     <div>
