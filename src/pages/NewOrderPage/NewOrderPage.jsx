@@ -18,7 +18,7 @@ export default function NewOrderPage() {
     const fish = await fishAPI.getAll();
     // console.log(fish, 'before set, fish in getFish function on app.jsx')
     setFish(fish);
-    // console.log(fish, 'after set, fish in getFish function on app.jsx');
+    console.log(fish, 'after set, fish in getFish function on app.jsx');
   } catch (error) {
     console.error(error, 'error for getFish');
   }}
@@ -31,6 +31,7 @@ export default function NewOrderPage() {
   }
 
   async function handleCheckout()  {
+    console.log(cart, 'cart in HANDLECHECKOUT')
     console.log(cart.isPaid, 'cart is paid BEFORE checkout')
     await ordersAPI.checkout();
     console.log(cart.isPaid, 'cart is paid AFTER checkout')

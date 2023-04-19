@@ -38,7 +38,9 @@ async function setItem(req, res) {
 // router.post('/cart/checkout', ordersCtrl.checkout )
 
 async function checkout(req, res) {
+    console.log('MADE IT CHECKOUT CONTROLLER')
     const cart = await Order.getCart(req.user._id);
+    console.log(cart, 'cart in checkout CONTROLLERS')
     cart.isPaid = true;
     await cart.save();
     res.json(cart);

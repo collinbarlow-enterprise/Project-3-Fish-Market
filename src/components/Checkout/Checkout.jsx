@@ -16,15 +16,13 @@ const cartItems = cart.lineItems.map(item =>
       key = {item._id}
     />
     )
-
-
 return (
     <>
         {/* <LineItemsOrderDetail /> DOESN'T WORK B/C LINEITEMS INSIDE COMPONENT ARE NOT DEFINED*/}
         <p>checkout componenet info</p>
         <>{cartItems}</>
         <>Total Price: {cart.orderTotal}</>
-        <button onClick={() => {handleCheckout(); setShowCheckout();}}>Checkout</button>
+        <button onClick={() => {handleCheckout()}}>Checkout</button>
     
     </>
   )

@@ -8,6 +8,7 @@ import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import Checkout from '../../components/Checkout/Checkout';
+import FishDetail from '../../components/FishDetail/FishDetail';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -22,6 +23,7 @@ export default function App() {
             <Route path="/orders/new" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path='/orders/checkout' element={<Checkout />} />
+            <Route path='/fish/:param' element={<FishDetail />} />
             {/* cart page is order detail where we pass in the cart state, and the handleChangeQty and handleCheckout */}
             <>CART: {OrderDetail}</>
           </Routes>

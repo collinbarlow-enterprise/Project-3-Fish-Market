@@ -1,14 +1,16 @@
 import React from 'react'
 // import { index } from '../../../controllers/api/fishes-controller'
 import IndividualFish from '../IndividualFish/IndividualFish'
+import { Link } from 'react-router-dom'
 
 export default function fish({fish, handleAddToOrder}) {
-  // console.log(fish, 'fish on FishComponenet')
+  console.log(fish, 'fish on FishComponenet')
   const fishesC = fish.map(f =>
     <IndividualFish 
       // key={}
       fishes={f}
       handleAddToOrder={handleAddToOrder}
+      
       />    
     );
 
