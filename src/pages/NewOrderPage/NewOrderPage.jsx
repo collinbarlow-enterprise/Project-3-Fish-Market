@@ -5,12 +5,14 @@ import OrderDetail from '../../components/OrderDetail/OrderDetail'
 import * as ordersAPI from '../../utilities/orders-api'
 import * as fishAPI from '../../utilities/fish-api'
 import Checkout from '../../components/Checkout/Checkout'
+import { useNavigate } from 'react-router-dom'
 
 export default function NewOrderPage() {
 
   const [cart, setCart] = useState(null)
   const [fish, setFish] = useState([]);
-  const [showCheckout, setShowCheckout] = useState(null)
+  const [showCheckout, setShowCheckout] = useState(null);
+  const navigate = useNavigate();
 
   async function getFish() {
     try {
@@ -30,11 +32,13 @@ export default function NewOrderPage() {
     setCart(cart);
   }
 
+  //needed to include navigate as it causes a re-render once the page has been changed
   async function handleCheckout()  {
     console.log(cart, 'cart in HANDLECHECKOUT')
     console.log(cart.isPaid, 'cart is paid BEFORE checkout')
     await ordersAPI.checkout();
     console.log(cart.isPaid, 'cart is paid AFTER checkout')
+    navigate('/orders');
     // handleShow(setShowCheckout);
   }
 

@@ -11,6 +11,7 @@ export function setItem(itemId, newQty) {
     return sendRequest(`${BASE_URL}/cart/quantity`, 'PUT', {itemId, newQty });
 }
 export function checkout() {
+    console.log('MADE IT TO API')
     return sendRequest(`${BASE_URL}/cart/checkout`, 'POST');
 }
 

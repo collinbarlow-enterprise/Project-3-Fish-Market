@@ -34,7 +34,6 @@ export default function FishDetail() {
 
   return (
     <div>
-      <div>FishDetail Component</div>
       {/* using && like a ternary that evaluates if a statement is true before rendering. Keeps the code below from rendering before api data has finished loading */}
       {fishParam && (
         <>
@@ -46,6 +45,9 @@ export default function FishDetail() {
                 <li>Total Fat: {fishParam.totalFat}</li>
                 <li>Serving Size: {fishParam.servingWeight}</li>
             </ul>
+            <div>How has the taste been described: <br/>{fishParam.taste}</div>
+            <div>What color should you expect: {fishParam.color}</div>
+            <img src={fishParam.imgUrl} style={{height: '200px', width: '200px'}}/>
         </>
       )}
     </div>

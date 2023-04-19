@@ -3,7 +3,7 @@ import './IndividualFish.css'
 import { Link } from 'react-router-dom'
 
 export default function IndividualFish({fishes, handleAddToOrder}) {
-  console.log(fishes, 'fishes on individual fishes')
+  // console.log(fishes, 'fishes on individual fishes')
   return (
     <>
     {/* update div to hold the image in some way(background?image above/below) */}

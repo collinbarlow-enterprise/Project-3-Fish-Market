@@ -20,9 +20,12 @@ return (
     <>
         {/* <LineItemsOrderDetail /> DOESN'T WORK B/C LINEITEMS INSIDE COMPONENT ARE NOT DEFINED*/}
         <p>checkout componenet info</p>
-        <>{cartItems}</>
+        <>{cartItems.isPaid ? null : <div>
+          <div> {cartItems} </div>
         <>Total Price: {cart.orderTotal}</>
         <button onClick={() => {handleCheckout()}}>Checkout</button>
+        </div>
+      }</>
     
     </>
   )

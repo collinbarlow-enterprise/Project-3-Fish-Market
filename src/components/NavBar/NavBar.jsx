@@ -13,7 +13,7 @@ return (
         &nbsp; | &nbsp;
         <Link to="/orders/new">Order</Link>
         &nbsp; | &nbsp;
-        <Link to="/orders/checkout">Checkout</Link>
+        {/* <Link to="/orders/checkout">Checkout</Link> */}
         &nbsp; | &nbsp;
         <span>Welcome, {user.name}</span>
         &nbsp; | &nbsp;
