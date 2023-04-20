@@ -64,11 +64,11 @@ async function checkout(req, res) {
 //the coma is used to seperate properties from within the object
 async function getPaidCartController(req, res) {
     const paidCart = await Order.getPaidCart(req.user._id);
-    console.log(paidCart, 'cart in GETPAIDCART CONTROLLER')
+    // console.log(paidCart, 'cart in GETPAIDCART CONTROLLER')
     const paidCartsWithTotal = paidCart.map(cart => ({
         ...cart.toJSON(),
         orderTotal: cart.orderTotal
     }));
-    console.log(paidCartsWithTotal, 'paid carts with TOTAL in controller')
+    // console.log(paidCartsWithTotal, 'paid carts with TOTAL in controller')
     res.json(paidCartsWithTotal);
 }
