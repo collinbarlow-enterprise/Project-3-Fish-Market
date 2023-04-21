@@ -45,7 +45,8 @@ navigate('/orders/new');
       <>
         <div className='row'>
           <div className='col'>
-            <div>Name: {fishParam.speciesName}, otherwise known as {fishParam.altName}</div>
+            <div>Name: <br/> {fishParam.speciesName}, otherwise known as {fishParam.altName}</div>
+            <br/>
             <div>Nutritional Information:</div>
             <ul>
               <li>Calories: {fishParam.calories}</li>
@@ -55,9 +56,9 @@ navigate('/orders/new');
             </ul>
           </div>
           <div className='col'>
-            <div>How has the taste been described:<br/><br/>{fishParam.taste}</div>
+            {fishParam.taste ? (<div >How has the taste been described:<br/><br/>{fishParam.taste}</div>) : null}
             <br/>
-            <div>What color should you expect:<br/><br/>{fishParam.color}</div>
+            {fishParam.color ? (<div>What color should you expect:<br/><br/>{fishParam.color}</div>) : null}
           </div>
           <div className='col'>
             <img src={fishParam.imgUrl} style={{height: '200px', width: '200px'}}/>
