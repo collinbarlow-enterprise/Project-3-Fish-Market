@@ -15,7 +15,7 @@ export default function PastOrders({pastOrders}) {
         />
         ));
   return (
-    <div>
+    <div className='PastOrdersDiv' style={{display: 'flex',flexDirection: 'row' ,gridTemplateColumns:'repeat(3, 1fr)', padding: '15px', maxWidth:'100px', maxHeight:'100px'}}>
         {paidOrders}
     </div>
   )

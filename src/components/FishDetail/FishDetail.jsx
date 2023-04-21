@@ -1,13 +1,15 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import * as fishAPI from '../../utilities/fish-api'
 
 
 
-export default function FishDetail() {
-  const [fishDetail, setFishDetail] = useState([]);
 
+export default function FishDetail({showFishComponent, setShowFishComponent, handleShowFish, param}) {
+  console.log(showFishComponent, 'showFishComponent State on FishDetail Load')
+  const [fishDetail, setFishDetail] = useState([]);
+  const navigate = useNavigate();
     async function getFishDetail() {
     try {
     // console.log('made it inside getFish')
@@ -25,8 +27,13 @@ export default function FishDetail() {
   }, []);  
 
 //   console.log(fishDetail, 'fishDetail in fishDetail' )
+function backToHome(){
+// handleShowFish(setShowFishComponent)
+// console.log(showFishComponent, 'showFishComponent in FishDetail')
+navigate('/orders/new');
+}
 
-  const { param } = useParams();
+  // const { param } = useParams();
 //   console.log(param, 'param on fishDetail')
 
   const fishParam = fishDetail.find((item) => item.speciesName === param);
@@ -48,6 +55,7 @@ export default function FishDetail() {
             <div>How has the taste been described: <br/>{fishParam.taste}</div>
             <div>What color should you expect: {fishParam.color}</div>
             <img src={fishParam.imgUrl} style={{height: '200px', width: '200px'}}/>
+            <button onClick={() => {backToHome()}}>Continue Shopping</button>
         </>
       )}
     </div>

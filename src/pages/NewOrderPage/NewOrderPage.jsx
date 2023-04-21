@@ -6,8 +6,9 @@ import * as ordersAPI from '../../utilities/orders-api'
 import * as fishAPI from '../../utilities/fish-api'
 import Checkout from '../../components/Checkout/Checkout'
 import { useNavigate } from 'react-router-dom'
+import './NewOrderPage.css'
 
-export default function NewOrderPage() {
+export default function NewOrderPage({showFishComponent, setShowFishComponent, handleShowFish}) {
 
   const [cart, setCart] = useState(null)
   const [fish, setFish] = useState([]);
@@ -76,18 +77,18 @@ function handleShow(setShowCheckout) {
 }
   
   return (
-    <>
+    <div className="Foundation">
     <br />
-    <>logo</>
-    {showCheckout ? null : <h1>Order Fish Here - New Order Page</h1>}
+    <h2>Oceanic Lux</h2>
+    {showCheckout ? null : <h4>Order Fish Here - New Order Page</h4>}
     <br />
-    {showCheckout ? <Checkout cart={cart} handleShow={handleShow} setShowCheckout={setShowCheckout} handleCheckout={handleCheckout}/> : null}
+    {showCheckout ? <Checkout cart={cart} handleShow={handleShow} setShowCheckout={setShowCheckout} handleCheckout={handleCheckout} handleShowFish={handleShowFish}/> : null}
     <>current cart in the NewOrderPage:</>
     {showCheckout ? null : <OrderDetail cart={cart} handleChangeQty={handleChangeQty} handleShow={handleShow} setShowCheckout={setShowCheckout} showCheckout={showCheckout}/> } 
     <br />
-    <>categories - is this a separate component?</>
+    {/* <>categories - is this a separate component?</> */}
 
-   {showCheckout ? null : <FishComponent fish={fish} handleAddToOrder={handleAddToOrder}/>}
-    </>
+   {showCheckout ? null : <FishComponent fish={fish} handleAddToOrder={handleAddToOrder} showFishComponent={showFishComponent} setShowFishComponent={setShowFishComponent} handleShowFish={handleShowFish}/>}
+   </div>
   )
 }

@@ -13,11 +13,9 @@ return (
         &nbsp; | &nbsp;
         <Link to="/orders/new">Order</Link>
         &nbsp; | &nbsp;
-        {/* <Link to="/orders/checkout">Checkout</Link> */}
+        <Link onClick={handleLogOut} to="">Log Out</Link>
         &nbsp; | &nbsp;
         <span>Welcome, {user.name}</span>
-        &nbsp; | &nbsp;
-        <Link onClick={handleLogOut} to="">Log Out</Link>
         </nav>
     );
 }

@@ -29,13 +29,13 @@ export default function LoginForm({ setUser }) {
 
     return (
         <div>
-        <div className="form-container">
-            <form autoComplete="off" onSubmit={handleSubmit}>
-            <label>Email</label>
-            <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-            <label>Password</label>
-            <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-            <button type="submit">LOG IN</button>
+        <div className="form-container col-12" style={{display: 'flex', flexDirection: 'column',justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+            <form autoComplete="off" onSubmit={handleSubmit} style={{width: '100%'}}>
+            {/* <label>Email</label> */}
+            <input className='col-12'placeholder='EMAIL' type="text" name="email" value={credentials.email} onChange={handleChange} required style={{flex : '1', margin: '10px'}}/>
+            {/* <label>Password</label> */}
+            <input className='col-12'type="password" placeholder='PASSWORD' name="password" value={credentials.password} onChange={handleChange} required style={{flex : '1', margin: '10px'}}/>
+            <button type="submit" style={{alignSelf: 'center', margin: '10px'}}>LOG IN</button>
             </form>
         </div>
         <p className="error-message">&nbsp;{error}</p>

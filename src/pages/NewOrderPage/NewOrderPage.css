@@ -14,3 +14,16 @@
   align-items: center;
   margin: 3vmin 2vmin;
 }
+
+.Foundation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border: 1000px;
+  /* border-radius: 30%; */
+  padding: 10px;
+  margin: 15px;
+  background-color:red;
+}
