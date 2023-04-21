@@ -40,7 +40,7 @@ navigate('/orders/new');
 //   console.log(fishParam, 'fishParam on fishDetail')
 
   return (
-    <div className='FishDetail container' style={{display:'flex', flexDirection:'row' }}>
+    <div className='FishDetail container' style={{display:'flex', flexDirection:'row'}}>
     {fishParam && (
       <>
         <div className='row'>
