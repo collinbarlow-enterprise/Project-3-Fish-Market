@@ -18,4 +18,6 @@ router.post('/cart/checkout',ensureLoggedIn, ordersCtrl.checkout);
 //get /previousOrders 
 router.get('/previousOrders',ensureLoggedIn, ordersCtrl.getPaidCartController);
 
+router.delete('/deleteOrder', ensureLoggedIn, ordersCtrl.deleteOrder)
+
 module.exports = router

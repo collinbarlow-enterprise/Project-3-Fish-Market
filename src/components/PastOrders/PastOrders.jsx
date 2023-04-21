@@ -1,7 +1,7 @@
 import React from 'react'
 import PastOrderDetails from '../PastOrderDetails/PastOrderDetails'
 
-export default function PastOrders({ pastOrders }) {
+export default function PastOrders({ pastOrders, handleDelete }) {
 
   const paidOrders = pastOrders.map((order, index) => (
     <PastOrderDetails
@@ -9,11 +9,16 @@ export default function PastOrders({ pastOrders }) {
       total={order.orderTotal}
       order={order}
       item={order.lineItems}
+      handleDelete={handleDelete}
     />
   ));
+
+
   return (
     <div className='PastOrdersDiv' style={{ padding: '15px', minWidth: '100%', minHeight: '100%' }}>
       {paidOrders}
+      
+      
     </div>
   )
 }

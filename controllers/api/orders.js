@@ -5,24 +5,22 @@ module.exports = {
     addToCart,
     setItem,
     checkout,
-    getPaidCartController
+    getPaidCartController,
+    deleteOrder
 }
 
 async function cart(req, res) {
-    console.log('cart CONTROLLER')
     const cart = await Order.getCart(req.user._id);
     res.json(cart)
 }
 
 async function addToCart(req, res) {
-    console.log('addToCart CONTROLLER')
     const cart = await Order.getCart(req.user._id);
     await cart.addItemToCart(req.params.id);
     res.json(cart);
 }
 
 async function setItem(req, res) {
-    console.log('setItem CONTROLLER')
     const cart = await Order.getCart(req.user._id);
     await cart.setItemQty(req.body.itemId, req.body.newQty);
     res.json(cart);
@@ -34,6 +32,15 @@ async function checkout(req, res) {
     await cart.save();
     res.json(cart);
 }
+
+async function deleteOrder(req, res) {
+    try {
+    const order = await Order.findByIdAndDelete(req.body._id);
+    res.json({success: true, order});
+} catch (error) {
+    console.log(error);
+    res.status(500)
+}}
 
 //when using this.find instead of this.findOne in the static method I am returning an array of documents instead of a single document
 // thus when I try to access the lineItems property in the controller function(or after) the lineItems property doesn't actually exist
