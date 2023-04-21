@@ -2,7 +2,7 @@ import React from 'react'
 import './LineItemsOrderDetail.css'
 
 export default function LineItemsOrderDetail({ lineItem, handleChangeQty }) {
-  // console.log(lineItem, 'lineItem in lineItemOrder')
+
   if (lineItem.quantity > 0) {
     return (
       <div>
@@ -13,7 +13,7 @@ export default function LineItemsOrderDetail({ lineItem, handleChangeQty }) {
           <img src={lineItem.item.imgUrl} style={{ height: '100px', width: '100px' }} />
 
         </div>
-        <div style={{ display:'flex', flexDirection:'row'}}>
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
           <button onClick={() => handleChangeQty(lineItem.item._id, lineItem.quantity + 1)}>Add</button>
           <button onClick={() => handleChangeQty(lineItem.item._id, lineItem.quantity - 1)}>Remove</button>
         </div>

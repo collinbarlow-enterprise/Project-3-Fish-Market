@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import FishDetail from '../FishDetail/FishDetail'
 
 export default function FishDetailPage({dontShowFishComponent, setShowFishComponent, handleShowFish}) {

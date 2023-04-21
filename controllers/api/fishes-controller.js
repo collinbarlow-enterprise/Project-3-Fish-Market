@@ -7,7 +7,6 @@ module.exports = {
 
     async function index(req, res) {
     const fish = await Fish.find({}).sort('speciesName').populate('speciesName').exec();
-    // re-sort based upon the sortOrder of the categories
     fish.sort((a, b) => a.speciesName.sortOrder - b.speciesName.sortOrder);
     res.json(fish);
     }

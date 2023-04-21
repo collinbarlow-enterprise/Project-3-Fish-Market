@@ -1,1 +1,0 @@
-//maybe a better way to add categories to the app based on price, calories, color?

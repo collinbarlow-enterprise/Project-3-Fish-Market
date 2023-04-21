@@ -23,9 +23,9 @@ const orderSchema = new Schema ({
     toJSON: {virtuals: true}
 });
 
-//need to add virtuals and statics to order documents for cart
 
-//grabs the value of  all the line items times their multiply of whats in the cart (where does the total come from? is that part of the reduce method?)
+
+//grabs the value of  all the line items times their multiply of whats in the cart 
 orderSchema.virtual('orderTotal').get(function () {
     return this.lineItems.reduce((total, item) => total + item.extPrice, 0);
 });
@@ -34,7 +34,7 @@ orderSchema.virtual('totalQty').get(function () {
     return this.lineItems.reduce((total, item) => total + item.quantity, 0);
 });
 
-//this one could probably be changed
+
 orderSchema.virtual('orderId').get(function() {
     return this.id.slice(-6).toUpperCase();
 });
@@ -45,7 +45,6 @@ orderSchema.statics.getCart = function(userId) {
         {user:userId},
         {upsert: true, new: true}
     )
-    //check notes on why this is needed
     .populate('lineItems.item')
     .exec();
 };
@@ -83,6 +82,5 @@ orderSchema.methods.setItemQty = function (itemId, newQty) {
     }
     return cart.save();
 };
-
 
 module.exports = mongoose.model('Order', orderSchema);
