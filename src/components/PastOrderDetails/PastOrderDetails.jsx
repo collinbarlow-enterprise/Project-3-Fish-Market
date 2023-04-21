@@ -8,7 +8,7 @@ console.log(order, 'order on PastOrderDetails')
       borderStyle: 'solid', borderSize: '5px', borderColor: 'black', display: 'flex', flexDirection: 'column', gridTemplateRows: 'repeat(6,1fr', padding: '15px', minWidth: '85%', minHeight: '85%'
     }}>
       <div>Prior Order Details</div><div>Order Total:  ${total} </div><div>Number of Items :  {order.totalQty} </div>
-      <button onClick={() => handleDelete(order)}>delete</button>
+     
       <div>
         {item.map((lineItem, index) => (
           <POIndividualItems
@@ -18,6 +18,7 @@ console.log(order, 'order on PastOrderDetails')
           />
         ))}
       </div>
+      <button onClick={() => handleDelete(order)}>delete</button>
     </div>
   )
 }
