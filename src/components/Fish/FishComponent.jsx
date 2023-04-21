@@ -21,7 +21,7 @@ export default function fish({fish, handleAddToOrder, showFishComponent, setShow
   return (
     <>
     <div>Freshly Caught Fish: </div>
-    <div style={{display: 'grid', gridTemplateColumns:'repeat(3, 1fr)', padding: '15px'}}>{fishesC} </div>
+    <div style={{display: 'grid', gridTemplateColumns:'repeat(3, 1fr)', padding: '15px', color: 'black'}}>{fishesC} </div>
     </>
     
   )

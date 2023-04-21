@@ -18,8 +18,23 @@ useEffect(function() {
 },[]);
 
   return (
-    <main className="OrderHistoryPage">
+    <main className="OrderHistoryPage container"
+    >
+      <div
+      // className='row'
+      style={{
+        display: 'flex', flexDirection: 'column' ,
+        // gridTemplateColumns:'repeat(3, 1fr)', 
+        padding: '15px', margin: '20px'
+        , minWidth:'100px', minHeight:'100px',
+        backgroundColor: '#777777',
+        color: 'white'
+
+      }}
+      
+      >
       <PastOrders pastOrders={pastOrders}/>
+      </div>
     </main>
   );
 }

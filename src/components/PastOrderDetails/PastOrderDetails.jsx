@@ -9,10 +9,18 @@ console.log(item, 'ITEM in PastOrderDetails')
 // console.log(total, 'total in PastOrderDetails')
 
   return (
-    <div className='PastOrdersDetails'style={{borderStyle:'solid', border: '10px', borderColor:'black'}}>
-        <div>Prior Order Details</div> 
-        <div>Order Total:  ${total} </div>
-        <div>Number of Items :  {order.totalQty} </div>
+    <div className='PastOrdersDetails'style={{
+      borderStyle:'solid', borderSize: '5px', borderColor:'black'
+      , display: 'flex',
+      flexDirection: 'column' ,
+      // flexDirection: 'row' ,
+      gridTemplateRows: 'repeat(6,1fr',
+      // gridTemplateColumns:'repeat(, 1fr)', 
+      padding: '15px', 
+      minWidth:'85%', minHeight:'85%'
+      }}>
+        <div>Prior Order Details</div><div>Order Total:  ${total} </div><div>Number of Items :  {order.totalQty} </div>
+        <div>
         {item.map((lineItem, index) => (
             <POIndividualItems
             key={index}
@@ -21,7 +29,9 @@ console.log(item, 'ITEM in PastOrderDetails')
             // total={total}
             // orderTotalQty={orderTotalQty}
             />
+               
         ))}
+        </div> 
     </div>
   )
 }

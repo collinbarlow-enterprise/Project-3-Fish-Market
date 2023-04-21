@@ -40,24 +40,35 @@ navigate('/orders/new');
 //   console.log(fishParam, 'fishParam on fishDetail')
 
   return (
-    <div>
-      {/* using && like a ternary that evaluates if a statement is true before rendering. Keeps the code below from rendering before api data has finished loading */}
-      {fishParam && (
-        <>
-          <div>Name: {fishParam.speciesName}, otherwise known as {fishParam.altName}</div>
-          <div>Nutritional Information: </div>
+    <div className='FishDetail container' style={{display:'flex', flexDirection:'row' }}>
+    {fishParam && (
+      <>
+        <div className='row'>
+          <div className='col'>
+            <div>Name: {fishParam.speciesName}, otherwise known as {fishParam.altName}</div>
+            <div>Nutritional Information:</div>
             <ul>
-                <li>Calories: {fishParam.calories}</li>
-                <li>Protein: {fishParam.protein}</li>
-                <li>Total Fat: {fishParam.totalFat}</li>
-                <li>Serving Size: {fishParam.servingWeight}</li>
+              <li>Calories: {fishParam.calories}</li>
+              <li>Protein: {fishParam.protein}</li>
+              <li>Total Fat: {fishParam.totalFat}</li>
+              <li>Serving Size: {fishParam.servingWeight}</li>
             </ul>
-            <div>How has the taste been described: <br/>{fishParam.taste}</div>
-            <div>What color should you expect: {fishParam.color}</div>
+          </div>
+          <div className='col'>
+            <div>How has the taste been described:<br/><br/>{fishParam.taste}</div>
+            <br/>
+            <div>What color should you expect:<br/><br/>{fishParam.color}</div>
+          </div>
+          <div className='col'>
             <img src={fishParam.imgUrl} style={{height: '200px', width: '200px'}}/>
-            <button onClick={() => {backToHome()}}>Continue Shopping</button>
-        </>
-      )}
-    </div>
+          </div>
+        </div>
+        <div className='row' style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+          <button onClick={() => {backToHome()}} style={{maxWidth: '100px', maxHeight: '75px'}}>Continue Shopping</button>
+        </div>
+      </>
+    )}
+  </div>
+    
   )
 }
