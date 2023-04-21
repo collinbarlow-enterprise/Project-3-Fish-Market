@@ -1,6 +1,5 @@
 import LineItemsOrderDetail from '../LineItemsOrderDetail/LineItemsOrderDetail';
 import './OrderDetail.css';
-import Checkout from '../Checkout/Checkout';
 
 export default function OrderDetail({cart, handleChangeQty, handleShow, setShowCheckout, showCheckout}) {
   console.log(cart,'cart in OrderDetail' )
@@ -21,8 +20,13 @@ export default function OrderDetail({cart, handleChangeQty, handleShow, setShowC
       <div className="section-heading">
         {showCheckout ? (<p>Nothing to see here</p>) : 
         (<>     
-          <>{ cart.lineItems.length >=0 ? lineItems : <p>No Items Selected</p>} { cart.lineItems.length >=0 ? <p>Total: ${cart.orderTotal}</p> : <p>No Total </p>}</> 
-          <>{ cart.lineItems.length >=1 ? <button onClick={() => handleShow(setShowCheckout)}>Checkout</button> : null }</> </>)}
+          <>{ cart.lineItems.length >=0 ? lineItems : <p>No Items Selected</p>} </> 
+            <div>
+              { cart.lineItems.length >=0 ? <p>Total: ${cart.orderTotal}</p> : <p>No Total </p>}
+              {cart.lineItems.length >=1 ? <button onClick={() => handleShow(setShowCheckout)}>Checkout</button> : null }
+              </div> 
+        </>
+        )}
       </div>
     </div>
   );

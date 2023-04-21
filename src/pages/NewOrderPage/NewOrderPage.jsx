@@ -79,14 +79,12 @@ function handleShow(setShowCheckout) {
   return (
     <div className="Foundation">
     <br />
-    <h2>Oceanic Lux</h2>
-    {showCheckout ? null : <h4>Order Fish Here - New Order Page</h4>}
+    {/* <h2>Oceanic Lux</h2> */}
+    {showCheckout ? null : <h4>The Finest Fish In All The Sea</h4>}
     <br />
     {showCheckout ? <Checkout cart={cart} handleShow={handleShow} setShowCheckout={setShowCheckout} handleCheckout={handleCheckout} handleShowFish={handleShowFish}/> : null}
-    <>current cart in the NewOrderPage:</>
     {showCheckout ? null : <OrderDetail cart={cart} handleChangeQty={handleChangeQty} handleShow={handleShow} setShowCheckout={setShowCheckout} showCheckout={showCheckout}/> } 
     <br />
-    {/* <>categories - is this a separate component?</> */}
 
    {showCheckout ? null : <FishComponent fish={fish} handleAddToOrder={handleAddToOrder} showFishComponent={showFishComponent} setShowFishComponent={setShowFishComponent} handleShowFish={handleShowFish}/>}
    </div>

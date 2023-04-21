@@ -26,9 +26,9 @@ export default function Checkout({ cart, handleShow, setShowCheckout, handleChec
   return (
     <>
       {/* <LineItemsOrderDetail /> DOESN'T WORK B/C LINEITEMS INSIDE COMPONENT ARE NOT DEFINED*/}
-      <p>checkout component info</p>
+      <p >Items currently in cart:</p>
       <>{cartItems.isPaid ? null : <div>
-        <div className='cartItems' style={{ display: 'flex', backgroundColor: 'white', borderStyle: 'solid', borderSize:'100px' }}> {cartItems} </div>
+        <div className='cartItems' style={{ display: 'flex',flexDirection:'column', backgroundColor: 'white', borderStyle: 'solid', borderSize:'100px', color:'black', margin:'10px'}}> {cartItems} </div>
         <div style={{justifyContent: 'center'}}>
           <>Total Price: {cart.orderTotal}</>
           <button onClick={() => { handleCheckout() }}>Checkout</button>
