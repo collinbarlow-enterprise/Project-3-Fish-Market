@@ -53,7 +53,9 @@ The data is pulled through Danny Yu's API which is connected to the FishWatch AP
 ## Notable Mentions:
 
 *Thank you to the instructional team at General Assembly for offering their guidance and support
+
 *Thank you to Jim Clark at General Assembly for his work on SEI-Cafe which was an inspiration for this project
+
 *Thank you to Danny Yu and his amazing API that is used to power this store. Here is his [GitHub](https://github.com/DannyYu728/whats-that-fish)
 
 
