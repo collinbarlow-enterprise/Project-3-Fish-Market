@@ -70,6 +70,6 @@ The data is pulled through Danny Yu's API which is connected to the FishWatch AP
 
 [Trello](https://trello.com/invite/b/kVV5E1ce/ATTI1eefc1d1136b770feb1b1a3d3227b70e61A966AE/project-3) --
 [Wireframe](https://whimsical.com/project-GTr3nkU9Dv1M5sSWSmhciU) --
-[ERD](ScreenshotsOceanicLux/ERD.png)
 
-![Screenshot of ERD](https://user-images.githubusercontent.com/23284014/232097665-27dbcb53-7c2f-4b63-ad17-19083aba605a.png)
+
+![Screenshot of ERD](ScreenshotsOceanicLux/ERD.png)
