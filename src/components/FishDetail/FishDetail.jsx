@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import * as fishAPI from '../../utilities/fish-api'
 
-export default function FishDetail({ showFishComponent, param }) {
-  console.log(showFishComponent, 'showFishComponent State on FishDetail Load')
+export default function FishDetail({ param }) {
   const [fishDetail, setFishDetail] = useState([]);
   const navigate = useNavigate();
 
