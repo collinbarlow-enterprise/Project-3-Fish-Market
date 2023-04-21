@@ -61,11 +61,12 @@ The data is pulled through Danny Yu's API which is connected to the FishWatch AP
 
 ##Images/Links
 
-[SignUp]() -- 
-[Products]() -- 
-[Detail]() -- 
-[Checkout]() -- 
-[Orders]() -- 
+[Login](ScreenshotsOceanicLux/Login.png) -- 
+[Products](ScreenshotsOceanicLux/Catalog.png) -- 
+[Details](ScreenshotsOceanicLux/Details.png) -- 
+[Cart](ScreenshotsOceanicLux/Cart.png) -- 
+[Checkout](ScreenshotsOceanicLux/Checkout.png) -- 
+[Orders](ScreenshotsOceanicLux/PastOrders.png) -- 
 
 [Trello](https://trello.com/invite/b/kVV5E1ce/ATTI1eefc1d1136b770feb1b1a3d3227b70e61A966AE/project-3) --
 [Wireframe](https://whimsical.com/project-GTr3nkU9Dv1M5sSWSmhciU) --
