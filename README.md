@@ -45,7 +45,7 @@ The data is pulled through Danny Yu's API which is connected to the FishWatch AP
 
 * adding more fish data - <strong>because who doesn't like more fish </strong>
 * incorporating linked lists to create product recommendations
-* refreashing the styling to create a more modern look - more fish, cleaner design, more images!!!
+* refreshing the styling to create a more modern look - more fish, cleaner design, more images!!!
 * incorporating an AI based API that will generate recipes, or haikus for each fish
 
 ***
