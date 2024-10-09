@@ -16,8 +16,7 @@ export default function fish({ fish, handleAddToOrder, showFishComponent, setSho
 
   return (
     <>
-      <div>Freshly Caught Fish: </div>
-      <div>{fishesC} </div>
+      <div className="fishCardBackGround">{fishesC} </div>
     </>
   )
 }

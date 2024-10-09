@@ -4,7 +4,7 @@ import CartItemsDetails from '../CartItemsDetails/CartItemsDetails';
 export default function Checkout({ cart, handleShow, setShowCheckout, handleCheckout}) {
 
   if (!cart) return null;
-  const cartItems = cart.lineItems.map(item =>
+  const cartItemsMap = cart.lineItems.map(item =>
     <CartItemsDetails
       item={item}
       key={item._id}
@@ -13,8 +13,8 @@ export default function Checkout({ cart, handleShow, setShowCheckout, handleChec
   return (
     <>
       <p >Items currently in cart:</p>
-      <>{cartItems.isPaid ? null : <div>
-        <div className='cartItems'> {cartItems} </div>
+      <>{cartItemsMap.isPaid ? null : <div>
+        <div className='cartItemsMap'> {cartItemsMap} </div>
         <div>
           <>Total Price: {cart.orderTotal}</>
           <button onClick={() => { handleCheckout() }}>Checkout</button>

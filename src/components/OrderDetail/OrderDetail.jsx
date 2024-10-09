@@ -4,7 +4,7 @@ import './OrderDetail.css';
 export default function OrderDetail({ cart, handleChangeQty, handleShow, setShowCheckout, showCheckout }) {
 
   if (!cart) return null;
-  const lineItems = cart.lineItems.map(item =>
+  const lineItemsMap = cart.lineItems.map(item =>
     <LineItemsOrderDetail
       lineItem={item}
       key={item._id}
@@ -13,18 +13,18 @@ export default function OrderDetail({ cart, handleChangeQty, handleShow, setShow
   )
 
   return (
-    <div className="OrderDetail">
-      <div className="section-heading">
-        {showCheckout ? null : (
-          <div>
-            <div>{cart.lineItems.length >= 0 ? lineItems : null} </div>
-            <div>
-              {cart.lineItems.length >= 0 ? <p>Total: ${cart.orderTotal}</p> : null}
-              {cart.lineItems.length >= 1 ? <button onClick={() => handleShow(setShowCheckout)}>Checkout</button> : null}
-            </div>
+    <div className="cartOrderDetail">
+      {showCheckout ? null : (
+        <div>
+          <div className="cartOrderDetailLineItemsMap">
+            {cart.lineItems.length >= 0 ? lineItemsMap : null}
           </div>
-          )}
-      </div>
+          <div className="cartOrderDetailOrderTotal">
+            {cart.lineItems.length >= 0 ? <p>Order Total: ${cart.orderTotal}</p> : null}
+            {cart.lineItems.length >= 1 ? <button onClick={() => handleShow(setShowCheckout)}>Checkout</button> : null}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
