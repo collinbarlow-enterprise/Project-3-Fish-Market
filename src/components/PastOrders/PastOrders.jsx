@@ -15,10 +15,8 @@ export default function PastOrders({ pastOrders, handleDelete }) {
 
 
   return (
-    <div className='PastOrdersDiv' style={{ padding: '15px', minWidth: '100%', minHeight: '100%' }}>
+    <div className='PastOrdersDiv'>
       {paidOrders}
-      
-      
     </div>
   )
 }

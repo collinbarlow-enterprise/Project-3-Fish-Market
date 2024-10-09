@@ -23,8 +23,6 @@ const orderSchema = new Schema ({
     toJSON: {virtuals: true}
 });
 
-
-
 //grabs the value of  all the line items times their multiply of whats in the cart 
 orderSchema.virtual('orderTotal').get(function () {
     return this.lineItems.reduce((total, item) => total + item.extPrice, 0);
@@ -39,14 +37,17 @@ orderSchema.virtual('orderId').get(function() {
     return this.id.slice(-6).toUpperCase();
 });
 
-orderSchema.statics.getCart = function(userId) {
-    return this.findOneAndUpdate(
+orderSchema.statics.getCart = async function(userId) {
+    const populatedLineItem = await this.findOneAndUpdate(
         { user: userId, isPaid: false},
         {user:userId},
         {upsert: true, new: true}
     )
     .populate('lineItems.item')
     .exec();
+
+    console.log(populatedLineItem, 'POPULATED LINE ITEM IN GET CART');
+    return populatedLineItem;
 };
 // need to include populate 'lineItems.item' b/c without that I will only have access to the document id (in this case Fish Id)
 //by using the populate I am telling mongoose to retrieve the referenced 'Fish' documents and replace the objectId with the actual 'Fish'
@@ -62,16 +63,23 @@ orderSchema.statics.getPaidCart = function(userId) {
 
 orderSchema.methods.addItemToCart = async function (itemId) {
     const cart = this;
+    console.log(cart, 'CART IN ADDITEM')
+    console.log(itemId, 'ITEM ID IN ADDITEM')
+    console.log(typeof itemId, 'type of ITEM ID IN ADDITEM')
     const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId));
+    console.log(lineItem, 'lineItem in addItem to Cart')
+    // returns undefined if the item isn't in the cart yet, if it is in the cart then it returns the item object
+    
     if (lineItem) {
         lineItem.quantity +=1;
     } else {
         const item = await mongoose.model('Fish').findById(itemId); 
+        console.log(item, 'ITEM AFTER BEING FOUND')
         cart.lineItems.push({item});
     }
     return cart.save();
     };
-//couldnt use remove b/c I was calling remove on an object that matches the schema rather than an instance. The remove() so needed to update to include a splice method involving the index of the lineItem and removing it via splice. FindIndex is used to find the index of the line item in the lineItems array that matches the itemId and then splice is used to remove that line item from the array 
+//couldnt use remove b/c I was calling remove on an object that matches the schema rather than an instance. The remove() needed to update to include a splice method involving the index of the lineItem and removing it via splice. FindIndex is used to find the index of the line item in the lineItems array that matches the itemId and then splice is used to remove that line item from the array 
 orderSchema.methods.setItemQty = function (itemId, newQty) {
     const cart = this;
     const lineItemIndex = cart.lineItems.findIndex(lineItem => lineItem.item._id.equals(itemId));

@@ -23,7 +23,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <h2>Welcome to Oceanic Lux</h2>
           <Routes>
-            <Route path="/orders/new" element={<NewOrderPage />} />
+            <Route path="/" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage user={user} />} />
             <Route path='/orders/checkout' element={<Checkout dontShowFishComponent={dontShowFishComponent} setShowFishComponent={setShowFishComponent} handleShowFish={handleShowFish}/>} />
             <Route path='/fish/:param' element={<FishDetailPage dontShowFishComponent={dontShowFishComponent} setShowFishComponent={setShowFishComponent} handleShowFish={handleShowFish}/>} />

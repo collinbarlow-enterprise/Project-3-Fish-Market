@@ -6,14 +6,14 @@ export default function LineItemsOrderDetail({ lineItem, handleChangeQty }) {
   if (lineItem.quantity > 0) {
     return (
       <div>
-        <div className="fishCardOrder" style={{ display: 'flex', flexDirection: 'column', margin: '10px' }}>
+        <div className="fishCardOrder">
           <div>Name: {lineItem.item.speciesName}</div>
           <div>How many: {lineItem.quantity}</div>
           <div>Price: ${lineItem.extPrice}</div>
-          <img src={lineItem.item.imgUrl} style={{ height: '100px', width: '100px' }} />
+          <img src={lineItem.item.imgUrl}/>
 
         </div>
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <div>
           <button onClick={() => handleChangeQty(lineItem.item._id, lineItem.quantity + 1)}>Add</button>
           <button onClick={() => handleChangeQty(lineItem.item._id, lineItem.quantity - 1)}>Remove</button>
         </div>

@@ -7,6 +7,8 @@ export default function FishDetail({ param }) {
   const [fishDetail, setFishDetail] = useState([]);
   const navigate = useNavigate();
 
+  const [resetComponent, setResetComponent] = useState(false)
+
   async function getFishDetail() {
     try {
       const fish = await fishAPI.getAll();
@@ -28,11 +30,11 @@ export default function FishDetail({ param }) {
   const fishParam = fishDetail.find((item) => item.speciesName === param);
 
   return (
-    <div className='FishDetail container' style={{ display: 'flex', flexDirection: 'row' }}>
+    <div className='FishDetail container'>
       {fishParam && (
         <>
-          <div className='row'>
-            <div className='col'>
+          <div className=''>
+            <div className=''>
               <div>Name: <br /> {fishParam.speciesName}, otherwise known as {fishParam.altName}</div>
               <br />
               <div>Nutritional Information:</div>
@@ -43,17 +45,17 @@ export default function FishDetail({ param }) {
                 <li>Serving Size: {fishParam.servingWeight}</li>
               </ul>
             </div>
-            <div className='col'>
+            <div className=''>
               {fishParam.taste ? (<div >How has the taste been described:<br /><br />{fishParam.taste}</div>) : null}
               <br />
               {fishParam.color ? (<div>What color should you expect:<br /><br />{fishParam.color}</div>) : null}
             </div>
-            <div className='col'>
-              <img src={fishParam.imgUrl} style={{ height: '200px', width: '200px' }} />
+            <div className=''>
+              <img src={fishParam.imgUrl}/>
             </div>
           </div>
-          <div className='row' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <button onClick={() => { backToHome() }} style={{ maxWidth: '100px', maxHeight: '75px' }}>Continue Shopping</button>
+          <div className='row' >
+            <button onClick={() => { backToHome() }}>Continue Shopping</button>
           </div>
         </>
       )}

@@ -14,8 +14,8 @@ export default function Checkout({ cart, handleShow, setShowCheckout, handleChec
     <>
       <p >Items currently in cart:</p>
       <>{cartItems.isPaid ? null : <div>
-        <div className='cartItems' style={{ display: 'flex', flexDirection: 'column', backgroundColor: 'white', borderStyle: 'solid', borderSize: '100px', color: 'black', margin: '10px' }}> {cartItems} </div>
-        <div style={{ justifyContent: 'center' }}>
+        <div className='cartItems'> {cartItems} </div>
+        <div>
           <>Total Price: {cart.orderTotal}</>
           <button onClick={() => { handleCheckout() }}>Checkout</button>
           <button onClick={() => { handleShow(setShowCheckout) }}>Continue Shopping</button>

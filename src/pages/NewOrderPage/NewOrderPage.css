@@ -1,30 +1,11 @@
 .NewOrderPage {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1.6fr 3.5fr 3fr;
-  grid-template-rows: 1fr;
-  background-color: var(--white);
-  border-radius: 2vmin;
+
 }
 
 .NewOrderPage aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin: 3vmin 2vmin;
+
 }
 
 .Foundation {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-style: solid;
-  border: 1000px;
-  /* border-radius: 30%; */
-  padding: 10px;
-  margin: 15px;
-  background-color:#303030;
-  color: white;
+
 }
