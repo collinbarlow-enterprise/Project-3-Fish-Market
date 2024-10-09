@@ -8,14 +8,22 @@ export default function NavBar({ user, setUser }) {
     }
 
     return (
-        <nav>
-            <Link to="/orders">Order History</Link>
-            &nbsp; | &nbsp;
-            <Link to="/">Home</Link>
-            &nbsp; | &nbsp;
-            <Link onClick={handleLogOut} to="">Log Out</Link>
-            &nbsp; | &nbsp;
-            <span>Welcome, {user.name}</span>
-        </nav>
-    );
+        <>
+          <nav>
+            {user ? (
+              <>
+                <Link to="/orders">Order History</Link>
+                &nbsp; | &nbsp;
+                <Link to="/">Home</Link>
+                &nbsp; | &nbsp;
+                <Link onClick={handleLogOut} to="">Log Out</Link>
+                &nbsp; | &nbsp;
+                <span>Welcome, {user.name}</span>
+              </>
+            ) : (
+              <></>
+            )}
+          </nav>
+        </>
+      );
 }
