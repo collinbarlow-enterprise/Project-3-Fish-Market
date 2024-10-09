@@ -59,14 +59,29 @@ export default function NewOrderPage({ showFishComponent, setShowFishComponent, 
   }
 
   return (
-    <div className="Foundation">
-      <br />
-      {showCheckout ? null : <h4>The Finest Fish In All The Sea</h4>}
-      <br />
-      {showCheckout ? <Checkout cart={cart} handleShow={handleShow} setShowCheckout={setShowCheckout} handleCheckout={handleCheckout} handleShowFish={handleShowFish} /> : null}
-      {showCheckout ? null : <OrderDetail cart={cart} handleChangeQty={handleChangeQty} handleShow={handleShow} setShowCheckout={setShowCheckout} showCheckout={showCheckout} />}
-      <br />
-      {showCheckout ? null : <FishComponent fish={fish} handleAddToOrder={handleAddToOrder} showFishComponent={showFishComponent} setShowFishComponent={setShowFishComponent} handleShowFish={handleShowFish} />}
+    <div className="gridContainer">
+      <div className="heroImageContainer">
+          <img></img>
+      </div>
+      <div className="aboutContainer">
+        <div className="aboutContent">
+        <h3>ABOUT</h3>
+        <p>Our story starts on a sleepy hallow</p>
+        </div>
+      </div>
+      <div className="cartContainer">
+        <div className="cartCheckoutContainer">
+          {showCheckout ? <Checkout cart={cart} handleShow={handleShow} setShowCheckout={setShowCheckout} handleCheckout={handleCheckout} handleShowFish={handleShowFish} /> : null}
+        </div>
+        <div className="cartOrderDetailContainer">
+          {showCheckout ? null : <OrderDetail cart={cart} handleChangeQty={handleChangeQty} handleShow={handleShow} setShowCheckout={setShowCheckout} showCheckout={showCheckout} />}
+        </div>
+      </div>
+      <div className="productContainer">
+        <div className="productFishContainer">
+          {showCheckout ? null : <FishComponent fish={fish} handleAddToOrder={handleAddToOrder} showFishComponent={showFishComponent} setShowFishComponent={setShowFishComponent} handleShowFish={handleShowFish} />}
+        </div>
+      </div>
     </div>
   )
 }

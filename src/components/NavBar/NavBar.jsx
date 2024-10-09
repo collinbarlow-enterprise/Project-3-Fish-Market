@@ -8,7 +8,6 @@ export default function NavBar({ user, setUser }) {
     }
 
     return (
-        <>
           <nav>
             {user ? (
               <>
@@ -24,6 +23,5 @@ export default function NavBar({ user, setUser }) {
               <></>
             )}
           </nav>
-        </>
       );
 }
