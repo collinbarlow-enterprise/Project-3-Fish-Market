@@ -1,11 +1,61 @@
-.NewOrderPage {
-
+.gridContainer {
+    background-color: lightblue;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px; /* Optional: Adds space between grid items */
 }
 
-.NewOrderPage aside {
-
+.heroImageContainer {
+    background-color: lightgreen;
+    grid-column: span 12; /* Takes full width */
 }
 
-.Foundation {
+.aboutContainer {
+    background-color: pink;
+    grid-column: 2 / span 10; /* Takes full width */
+    display: grid; /* Make this a grid container */
+}
 
+.aboutContent {
+    background-color: brown;
+    grid-column: 2 / span 10; /* Start from column 2 and span 10 columns */
+}
+
+.aboutFlex {
+    display: flex;
+    gap: 20px;
+}
+
+.aboutFlex p {
+    flex: 1;
+        /* margin: 0;  */
+}
+
+.cartContainer {
+    background-color: grey;
+    grid-column: 1/ span 12; /* Takes full width */
+    display: grid; /* Make this a grid container */
+}
+
+.cartCheckoutContainer {
+    background-color: pink;
+    grid-column: 2 / span 10; /* Start from column 2 and span 10 columns */
+}
+
+.cartOrderDetailContainer {
+    background-color: lightgreen;
+    grid-column: 2 / span 9; /* Ensures it spans the right columns */
+    display: grid; /* Set it to grid to prepare for internal grids */
+    gap: 20px;
+}
+
+.productContainer {
+    background-color: lavenderblush;
+    grid-column: span 12; /* Takes full width */
+    display: grid; /* Make this a grid container */
+}
+
+.productFishContainer {
+    background-color: yellow;
+    grid-column: 2 / span 10; /* Ensure it follows the column layout */
 }

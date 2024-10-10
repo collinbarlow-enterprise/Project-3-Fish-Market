@@ -18,37 +18,27 @@ export default function App() {
   }
   return (
     <main className="App">
-
       <div className='navHeaderContainer'>
         <div className="navContainer">
           <NavBar user={user} setUser={setUser} />
         </div>
-
+  
         <div className="headerContainer">
           <h1>OCEANIC LUX</h1>
           <h3>Rich Sashimi</h3>
         </div>
       </div>
-
-      {user ?
-
+  
+      {user ? (
         <Routes>
           <Route path="/" element={<NewOrderPage />} />
           <Route path="/orders" element={<OrderHistoryPage user={user} />} />
           <Route path='/orders/checkout' element={<Checkout dontShowFishComponent={dontShowFishComponent} setShowFishComponent={setShowFishComponent} handleShowFish={handleShowFish} />} />
           <Route path='/fish/:param' element={<FishDetailPage dontShowFishComponent={dontShowFishComponent} setShowFishComponent={setShowFishComponent} handleShowFish={handleShowFish} />} />
-        </Routes> : null}
-
-      {user ? (
-        <NewOrderPage
-          dontShowFishComponent={dontShowFishComponent}
-          setShowFishComponent={setShowFishComponent}
-          handleShowFish={handleShowFish}
-        />
+        </Routes>
       ) : (
         <AuthPage setUser={setUser} />
       )}
-
     </main>
   );
 }

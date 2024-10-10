@@ -1,4 +1,7 @@
-fishCardOrder {
-    display: grid;
-    grid-template-columns: 1;
-}
+.cartFishOrderCard {
+    background-color: white;
+    /* padding: 15px; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }

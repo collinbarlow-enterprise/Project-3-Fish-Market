@@ -1,4 +1,5 @@
 import React from 'react'
+import '../CartItemsDetails/CartItemsDetail.css'
 
 export default function CartItemsDetails({ item }) {
 

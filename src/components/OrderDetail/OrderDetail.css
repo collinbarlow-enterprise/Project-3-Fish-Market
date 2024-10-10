@@ -1,47 +1,17 @@
-.OrderDetail {
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 3vmin;
-  font-size: 2vmin;
-  color: var(--text-light);
+.cartOrderDetail {
+  background-color: lightgreen;
+  grid-column: 1 / span 9; /* Ensures it spans the right columns */
+  display: grid; /* Set it to grid to prepare for internal grids */
+  gap: 20px;
 }
 
-.OrderDetail .section-heading {
-  width: 100%
-}
-
-.OrderDetail .line-item-container {
-  margin-top: 3vmin;
-  justify-content: flex-start;
-  height: calc(100vh - 18vmin);
-  width: 100%;
-}
-
-.OrderDetail .total {
-  width: 100%;
+.cartOrderDetailLineItemsMap {
   display: grid;
-  grid-template-columns: 18.35vw 5.75vw 5.25vw;
-  padding: 1vmin 0;
-  color: var(--text-light);
-  border-top: .1vmin solid var(--tan-3);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive, 4-column grid */
+  gap: 20px; /* Space between items */
+  /* padding: 10px; */
 }
 
-.OrderDetail .total span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5vw;
-  color: var(--text-dark);
-}
-
-.OrderDetail .total span.right {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.OrderDetail .hungry {
-  position: absolute;
-  top: 50vh;
-  font-size: 2vmin;
+.cartOrderDetailOrderTotal {
+  text-align: center;
 }

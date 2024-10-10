@@ -1,5 +1,6 @@
 import React from 'react'
 import CartItemsDetails from '../CartItemsDetails/CartItemsDetails';
+import '../Checkout/Checkout.css';
 
 export default function Checkout({ cart, handleShow, setShowCheckout, handleCheckout}) {
 
@@ -15,7 +16,7 @@ export default function Checkout({ cart, handleShow, setShowCheckout, handleChec
       <p >Items currently in cart:</p>
       <>{cartItemsMap.isPaid ? null : <div>
         <div className='cartItemsMap'> {cartItemsMap} </div>
-        <div>
+        <div className="cartCheckOut">
           <>Total Price: {cart.orderTotal}</>
           <button onClick={() => { handleCheckout() }}>Checkout</button>
           <button onClick={() => { handleShow(setShowCheckout) }}>Continue Shopping</button>

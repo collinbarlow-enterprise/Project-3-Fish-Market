@@ -24,7 +24,7 @@ export default function FishDetail({ param }) {
 
 
   function backToHome() {
-    navigate('/orders/new');
+    navigate('/');
   }
 
   const fishParam = fishDetail.find((item) => item.speciesName === param);
