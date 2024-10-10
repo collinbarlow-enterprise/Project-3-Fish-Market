@@ -1,5 +1,6 @@
 import React from 'react'
 import IndividualFish from '../IndividualFish/IndividualFish'
+import './Fish.css'
 
 export default function fish({ fish, handleAddToOrder, showFishComponent, setShowFishComponent, handleShowFish }) {
 

@@ -43,7 +43,7 @@
 }
 
 .cartOrderDetailContainer {
-    background-color: lightgreen;
+    background-color: red;
     grid-column: 2 / span 9; /* Ensures it spans the right columns */
     display: grid; /* Set it to grid to prepare for internal grids */
     gap: 20px;
@@ -51,11 +51,10 @@
 
 .productContainer {
     background-color: lavenderblush;
-    grid-column: span 12; /* Takes full width */
+    grid-column: 2/ span 10; /* Takes full width */
     display: grid; /* Make this a grid container */
 }
 
 .productFishContainer {
     background-color: yellow;
-    grid-column: 2 / span 10; /* Ensure it follows the column layout */
 }
