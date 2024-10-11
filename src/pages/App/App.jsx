@@ -21,10 +21,7 @@ export default function App() {
          <div className="navContainer">
           <NavBar user={user} setUser={setUser} />
         </div>
-        <div className="headerContainer">
-          <h1>OCEANIC LUX</h1>
-          <h3>Rich Sashimi</h3>
-        </div>
+    
     
   
       {user ? (

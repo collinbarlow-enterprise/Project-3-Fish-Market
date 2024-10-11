@@ -59,25 +59,28 @@ export default function NewOrderPage({ showFishComponent, setShowFishComponent, 
   }
 
   return (
+    // <div className="gridContainer">
     <div className="gridContainer">
       <div className="heroImageContainer">
+        <div className="headerGrid">
+          <div className="headerContainer">
+            <h1>OCEANIC LUX</h1>
+            <h3>Rich Sashimi</h3>
+          </div>
+        </div>
+
         <img></img>
       </div>
       <div className="aboutContainer">
         <div className="aboutContent">
           <h3>ABOUT</h3>
           <div className="aboutFlex">
-            
+
             <p>At Oceanic Lux, we take pride in delivering only the freshest, most sustainable sashimi to our customers. </p>
             <p>Each selection is curated from fisheries that prioritize environmental health and responsible harvesting. </p>
-            <p>Our dedication to quality ensures that every piece of seafood is expertly prepared for your enjoyment.</p>
-             
-            
-
-
             <p>
-              With decades of experience, we combine traditional techniques with modern practices to create a truly premium experience.</p> 
-             <p> 
+              With decades of experience, we combine traditional techniques with modern practices to create a truly premium experience.</p>
+            <p>
               We are committed to supporting small-scale fisheries and minimizing our environmental footprint, making every bite a conscious choice for a better future.
             </p>
 
@@ -93,7 +96,7 @@ export default function NewOrderPage({ showFishComponent, setShowFishComponent, 
         </div>
       </div>
       <div className="productContainer">
-      <h3>Sashimi Offerings:</h3>
+        <h3>Sashimi Offerings:</h3>
         <div className="productFishContainer">
           {showCheckout ? null : <FishComponent fish={fish} handleAddToOrder={handleAddToOrder} showFishComponent={showFishComponent} setShowFishComponent={setShowFishComponent} handleShowFish={handleShowFish} />}
         </div>

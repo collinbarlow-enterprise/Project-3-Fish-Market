@@ -13,36 +13,45 @@
 .heroImageContainer {
     background-color: lightgreen;
     grid-column: span 12; /* Takes full width */
-    height: 500px;
+    height: 900px;
 }
 
 .aboutContainer {
     background-color: pink;
-    grid-column:span 12; /* Takes full width */
-    display: contents; /* Make this a grid container */
+    grid-column: 2 / span 10; /* Takes full width */
+   display: grid; /* Make this a grid container */
+   grid-template-columns: repeat(10, 1fr);
 }
 
 .aboutContent {
     background-color: brown;
-    grid-column: 2 / span 10; /* Start from column 2 and span 10 columns */
+    grid-column: span 10; /* Start from column 2 and span 10 columns */
+    display: grid; 
+    grid-template-columns: repeat(10, 1fr);
 }
 
 .aboutFlex {
-    display: flex;
+    grid-column: 2 / span 8;
+    line-height: 1.8;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
     /* gap: 20px; */
     font-size: 2rem;
 }
 
 .aboutFlex p {
-    flex: 1;
-    padding: 10px;
+    /* grid-column: span 4; */
+    /* flex: 1; */
+    font-weight: 500;
+    font-size: 2rem;
+    /* padding: 10px; */
         /* margin: 0;  */
 }
 
 .cartContainer {
     background-color: grey;
-    grid-column: span 12;
     display: grid;
+    grid-column: span 12;
     grid-template-columns: subgrid;}
 
 .cartCheckoutContainer {
