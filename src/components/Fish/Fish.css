@@ -1,9 +1,14 @@
 .fishCardBackGround {
-    /* display: grid; */
+    display: grid;
     /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); Responsive, 4-column grid */
     /* gap: 20px; Space between items */
     /* padding: 10px; */
     background-color: aqua;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive, 4-column grid */
+    grid-auto-rows: 300px;
+    gap: 20px; /* Space between items */
+    /* padding: 10px; */
+    margin-bottom: 50px;
 }
 
 .fishCardForeGround {

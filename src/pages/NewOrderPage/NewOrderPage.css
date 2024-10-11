@@ -92,16 +92,13 @@
 
 .productContainer {
     background-color: lavenderblush;
-    grid-column: 2/ span 12; /* Takes full width */
+    grid-column: span 14; /* Takes full width */
     display: grid;
-    grid-template-columns: subgrid;
+    grid-template-columns: repeat(10, 1fr);
 }
 
 .productFishContainer {
     background-color: yellow;
     display: grid;
-    grid-template-columns: repeat(4 , 300px); /* Responsive, 4-column grid */
-    grid-auto-rows: 300px;
-    gap: 20px; /* Space between items */
-    /* padding: 10px; */
+    grid-column: 2 / span 8;
 }
