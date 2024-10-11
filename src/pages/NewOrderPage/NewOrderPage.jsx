@@ -67,13 +67,18 @@ export default function NewOrderPage({ showFishComponent, setShowFishComponent, 
         <div className="aboutContent">
           <h3>ABOUT</h3>
           <div className="aboutFlex">
-            <p>
-              At Oceanic Lux, we take pride in delivering only the freshest, most sustainable sashimi to our customers. Each selection is curated from fisheries that prioritize environmental health and responsible harvesting. Our dedication to quality ensures that every piece of seafood is expertly prepared for your enjoyment.
-            </p>
+            
+            <p>At Oceanic Lux, we take pride in delivering only the freshest, most sustainable sashimi to our customers. </p>
+            <p>Each selection is curated from fisheries that prioritize environmental health and responsible harvesting. </p>
+            <p>Our dedication to quality ensures that every piece of seafood is expertly prepared for your enjoyment.</p>
+             
+            
 
 
             <p>
-              With decades of experience, we combine traditional techniques with modern practices to create a truly premium experience. We are committed to supporting small-scale fisheries and minimizing our environmental footprint, making every bite a conscious choice for a better future.
+              With decades of experience, we combine traditional techniques with modern practices to create a truly premium experience.</p> 
+             <p> 
+              We are committed to supporting small-scale fisheries and minimizing our environmental footprint, making every bite a conscious choice for a better future.
             </p>
 
           </div>
@@ -88,6 +93,7 @@ export default function NewOrderPage({ showFishComponent, setShowFishComponent, 
         </div>
       </div>
       <div className="productContainer">
+      <h3>Sashimi Offerings:</h3>
         <div className="productFishContainer">
           {showCheckout ? null : <FishComponent fish={fish} handleAddToOrder={handleAddToOrder} showFishComponent={showFishComponent} setShowFishComponent={setShowFishComponent} handleShowFish={handleShowFish} />}
         </div>

@@ -1,6 +1,11 @@
 .fishCardBackGround {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive, 4-column grid */
-    gap: 20px; /* Space between items */
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); Responsive, 4-column grid */
+    /* gap: 20px; Space between items */
     /* padding: 10px; */
+    background-color: aqua;
 }
+
+.fishCardForeGround {
+    text-align: center;
+  }

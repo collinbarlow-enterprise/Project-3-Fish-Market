@@ -1,13 +1,16 @@
 .cartOrderDetail {
   background-color: lightgreen;
-  grid-column: 1 / span 9; /* Ensures it spans the right columns */
-  display: grid; /* Set it to grid to prepare for internal grids */
+  /* grid-column: 1 / span 9; */
+  /* Ensures it spans the right columns */
+  /* display: grid;  */
+  /* Set it to grid to prepare for internal grids */
   gap: 20px;
 }
 
 .cartOrderDetailLineItemsMap {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive, 4-column grid */
+  grid-auto-rows: 300px;
   gap: 20px; /* Space between items */
   /* padding: 10px; */
 }
