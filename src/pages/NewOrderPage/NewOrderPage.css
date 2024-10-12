@@ -98,7 +98,7 @@
 }
 
 .productFishContainer {
-    background-color: yellow;
+    /* background-color: yellow; */
     display: grid;
     grid-column: 2 / span 8;
 }
