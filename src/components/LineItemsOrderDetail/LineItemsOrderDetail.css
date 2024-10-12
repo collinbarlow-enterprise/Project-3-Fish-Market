@@ -9,16 +9,26 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     text-align: start;
-  }
+}
 
-  .cartFishOrderCardInfo {
+.cartFishOrderCardWrapper {
+    background-color: rgba(125, 125, 125, 0.3);
+}
+.cartFishOrderCardWrapper2 {
+    background-color: rgba(250, 209, 255, 0.409);
+}
+
+.cartFishOrderCardInfo {
     display: flex;
     flex-direction: column;
     /* display: grid; */
     /* grid-template-rows: repeat(4, 1fr); */
-  }
+}
 
-  .cartIndividualMetrics {
-    /* grid-column: span 6 */
-  }
- 
+.cartIndividualMetrics {
+    padding: 0px 10px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    /* justify-item; */
+}

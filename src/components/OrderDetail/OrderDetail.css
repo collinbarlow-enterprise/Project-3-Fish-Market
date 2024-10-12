@@ -11,7 +11,7 @@
 .cartOrderDetailLineItemsMap {
   display: grid;
   grid-column: 2 / span 8;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive, 4-column grid */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive, 4-column grid */
   grid-auto-rows: 500px;
   gap: 20px; /* Space between items */
   /* padding: 10px; */
@@ -20,5 +20,11 @@
 .cartOrderDetailOrderTotal {
   padding: 20px 0;
   text-align: center;
-  grid-column: span 12;
+  grid-column: 5 /span 2;
+  background-color: white;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5%;
+  margin: 20px;
+
 }
