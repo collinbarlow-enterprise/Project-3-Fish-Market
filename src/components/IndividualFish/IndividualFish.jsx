@@ -1,5 +1,6 @@
 import React from 'react'
-import './IndividualFish.css'
+
+import "../LineItemsOrderDetail/LineItemsOrderDetail.css"
 import { Link } from 'react-router-dom'
 
 export default function IndividualFish({ fishes, handleAddToOrder, showFishComponent, setShowFishComponent, handleShowFish }) {
