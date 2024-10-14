@@ -13,9 +13,14 @@
 
 .cartFishOrderCardWrapper {
     background-color: rgba(125, 125, 125, 0.3);
+    height: 100%
 }
 .cartFishOrderCardWrapper2 {
     background-color: rgba(250, 209, 255, 0.409);
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .cartFishOrderCardInfo {
