@@ -18,11 +18,21 @@
 }
 
 .cartFishOrderCard {
-    background-color: rgba(180, 220, 180, 1); /* Contradictory: first sheet commented out, second sheet included */
+    /* background-color: rgb(180, 220, 180);  */
+    background-color: rgba(200, 240, 240, 1);
+    backdrop-filter: blur(10px); /* Adds frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(200, 240, 240, 1); 
     padding: 10px; /* From first sheet. Second sheet had 15px padding commented out */
-    border: 2px solid rgb(170, 210, 170); /* From first sheet */
+    border: 2px solid rgb(150, 190, 190); /* From first sheet */
     border-radius: 15px; /* Identical in both sheets */
     text-align: start; /* Identical in both sheets */
+    /* background-color: rgba(200, 240, 240, 0.6); */
+    backdrop-filter: blur(10px); /* Adds frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(200, 240, 240, 1); 
 }
 
 .cartFishOrderCardWrapper {

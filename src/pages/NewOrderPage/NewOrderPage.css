@@ -29,10 +29,14 @@
     /* padding: 10px 10px 0px 10px; */
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    backdrop-filter: blur(10px);
+    height: 100%;
 }
 
 .headerContainer {
-    grid-column: span 14
+    grid-column: span 14;
+    padding-top: 25px;
+    
 }
 
 .headerContainer h1 {
@@ -63,7 +67,7 @@
     grid-template-columns: repeat(10, 1fr);
 
     /* background: rgba(255, 255, 255, 0.2);  */
-    background: linear-gradient(280deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
+    /* background: linear-gradient(280deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15)); */
 
     /* border-radius: 15px; */
     /* padding: 20px; */
@@ -98,23 +102,20 @@
 
 .cartContainer {
     background-color: rgba(230, 230, 230, 1);
-    /* display: grid; */
+    border-bottom: 2px solid rgba(255, 204, 153, 1);
     grid-column: span 14;
-    grid-template-columns: repeat(10, 1fr);}
+}
 
 .cartCheckoutContainer {
-    /* background-color: pink; */
-    grid-column: span 12; 
-    /* Start from column 2 and span 10 columns */
 }
 
 .cartOrderDetailContainer {
-    /* background-color: red; */
-    grid-column: 2 / span 12; /* Ensures it spans the right columns */
+ /* Ensures it spans the right columns */
 }
 
 .productContainer {
-    background-color: lavenderblush;
+    background-color: rgba(180, 220, 220, 1);
+    border-bottom: 2px solid rgba(255, 204, 153, 1);
     grid-column: span 14; /* Takes full width */
     display: grid;
     grid-template-columns: repeat(10, 1fr);

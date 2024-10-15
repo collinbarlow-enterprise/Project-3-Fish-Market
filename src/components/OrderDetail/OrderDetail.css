@@ -1,12 +1,7 @@
 .cartOrderDetail {
-  /* background-color: rgba(200, 240, 240, 1); */
-  background-color: rgba(230, 230, 230, 1);
-  /* grid-column: 1 / span 9; */
-  /* Ensures it spans the right columns */
   display: grid; 
   grid-template-columns: repeat(10, 1fr)
-  /* Set it to grid to prepare for internal grids */
-  /* gap: 20px; */
+
 }
 
 .cartOrderDetailLineItemsMap {
