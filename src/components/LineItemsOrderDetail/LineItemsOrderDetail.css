@@ -18,10 +18,10 @@
 }
 
 .cartFishOrderCard {
-    background-color: white; /* Contradictory: first sheet commented out, second sheet included */
+    background-color: rgba(180, 220, 180, 1); /* Contradictory: first sheet commented out, second sheet included */
     padding: 10px; /* From first sheet. Second sheet had 15px padding commented out */
-    border: 2px solid black; /* From first sheet */
-    border-radius: 5px; /* Identical in both sheets */
+    border: 2px solid rgb(170, 210, 170); /* From first sheet */
+    border-radius: 15px; /* Identical in both sheets */
     text-align: start; /* Identical in both sheets */
 }
 

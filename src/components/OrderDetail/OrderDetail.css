@@ -1,5 +1,6 @@
 .cartOrderDetail {
-  background-color: lightgreen;
+  /* background-color: rgba(200, 240, 240, 1); */
+  background-color: rgba(230, 230, 230, 1);
   /* grid-column: 1 / span 9; */
   /* Ensures it spans the right columns */
   display: grid; 

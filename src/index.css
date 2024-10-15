@@ -18,6 +18,14 @@ h1, h3 {
   font-family: 'Josefin Sans', 'Noto Sans', 'Helvetica Neue';
 }
 
+button {
+  border: 2px solid rgba(255, 204, 153, 1); /* Gold accent */
+  margin: 5px 0px;
+  color: black;
+  border-radius: 15px;
+  padding: 10px;
+}
+
 
 
 .scroll-y {

@@ -14,14 +14,15 @@
     font-size: 3.5rem;
     grid-column: span 14;
     margin-left: 20px;
-    padding-top: 20px;
+    padding-top: 50px;
 }
 
 .heroImageContainer {
-    background-color: lightgreen;
+    /* background-color: lightgreen; */
+    border-bottom: 2px solid rgba(255, 204, 153, 1);
     grid-column: span 14; /* Takes full width */
     height: 75dvh;
-    /* height should probably be the max height of the image without distortion */
+    background-image: url("../../../public/Images/oceanicLuxHeroImage.webp");
 }
 
 .headerGrid {
@@ -46,27 +47,47 @@
 }
 
 .aboutContainer {
-    background-color: pink;
+    /* background-color: rgba(200, 240, 240, 1); */
+    background-color: rgba(180, 220, 220, 1);
     grid-column: span 14; /* Takes full width */
    display: grid; /* Make this a grid container */
    grid-template-columns: repeat(10, 1fr);
+   border-bottom: 2px solid rgba(255, 204, 153, 1);
 }
 
 .aboutContent {
-    background-color: brown;
+    /* padding: 50px; */
+    /* background-color: brown; */
     grid-column: span 10; /* Start from column 2 and span 10 columns */
     display: grid; 
     grid-template-columns: repeat(10, 1fr);
+
+    /* background: rgba(255, 255, 255, 0.2);  */
+    background: linear-gradient(280deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
+
+    /* border-radius: 15px; */
+    /* padding: 20px; */
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); Soft shadow for depth */
+    /* box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2); Larger shadow for more depth */
+    backdrop-filter: blur(10px); /* The blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    /* border: 1px solid rgba(255, 255, 255, 0.3); Light border */
 }
 
 .aboutFlex {
     margin-bottom: 50px;
-    padding-top: 50px;
+    padding: 25px;
     grid-column: 2 / span 8;
     line-height: 1.6;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     font-size: 2rem;
+
+    background-color: rgba(200, 240, 240, 0.6);
+    backdrop-filter: blur(10px); /* Adds frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(200, 240, 240, 1); 
 }
 
 .aboutFlex p {
@@ -76,19 +97,19 @@
 }
 
 .cartContainer {
-    background-color: grey;
+    background-color: rgba(230, 230, 230, 1);
     /* display: grid; */
     grid-column: span 14;
     grid-template-columns: repeat(10, 1fr);}
 
 .cartCheckoutContainer {
-    background-color: pink;
+    /* background-color: pink; */
     grid-column: span 12; 
     /* Start from column 2 and span 10 columns */
 }
 
 .cartOrderDetailContainer {
-    background-color: red;
+    /* background-color: red; */
     grid-column: 2 / span 12; /* Ensures it spans the right columns */
 }
 
