@@ -30,8 +30,9 @@ export default function PastOrderDetails({ total, order, item, handleDelete }) {
             />
           ))}
         </div>
-        <button onClick={() => handleDelete(order)}>delete</button>
       </div>
+      <button className="orderDeleteButton" onClick={() => handleDelete(order)}>Delete Order</button>
+
     </div>
   )
 }

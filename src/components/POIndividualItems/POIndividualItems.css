@@ -1,0 +1,29 @@
+.POIndividual {
+    display: grid;
+    grid-template-areas:
+    "metrics image";
+    margin-bottom: 25px;
+    border-bottom: 2px solid rgba(255, 204, 153, 1);
+}
+
+.POIMetrics {
+    grid-area: metrics;
+}
+
+.fishName {
+    font-weight: 500;
+}
+
+.POIImage {
+    grid-area: image;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-bottom: 25px;
+}
+
+.POIImage img {
+    box-shadow: 0 5px 20px rgb(50 80 90);
+    border-radius: 15px;
+
+}

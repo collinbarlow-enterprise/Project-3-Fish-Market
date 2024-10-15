@@ -21,10 +21,15 @@ h1, h3 {
 button {
   border: 2px solid rgba(255, 204, 153, 1); /* Gold accent */
   background-color: rgba(250, 250, 250, 1);
+  background-color: rgba(200, 240, 240, 1);
   margin: 5px 0px;
   color: black;
   border-radius: 15px;
   padding: 10px;
+}
+
+button:hover {
+  background-color: rgba(180, 220, 220, 1);
 }
 
 

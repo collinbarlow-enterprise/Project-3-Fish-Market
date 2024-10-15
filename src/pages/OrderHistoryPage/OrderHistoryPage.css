@@ -1,13 +1,20 @@
 .OrderHistoryPage {
-background-color: rgba(180, 220, 220, 1);
-height: 100%;
-width: 100%;
+    background-color: rgba(180, 220, 220, 1);
+    height: 100%;
+    width: 100%;
 }
 
 .OrderHistoryPage h3 {
-        font-size: 3.5rem;
-        grid-column:  2 / span 8;
-        padding-top: 50px;
-        padding-left: 50px;
-        margin-top: 0;
+    font-size: 3.5rem;
+    grid-column: 2 / span 8;
+    padding-top: 50px;
+    margin-top: 0;
+}
+
+.OrderHistoryPage button{
+    background-color: white;
+}
+
+.OrderHistoryPage button:hover {
+    background-color: rgba(240, 240, 240, 1)
 }

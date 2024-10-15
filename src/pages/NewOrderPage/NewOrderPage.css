@@ -87,7 +87,7 @@
     grid-template-rows: repeat(4, 1fr);
     font-size: 2rem;
 
-    background-color: rgba(200, 240, 240, 0.6);
+    background-color: white;
     backdrop-filter: blur(10px); /* Adds frosted glass effect */
     -webkit-backdrop-filter: blur(10px); /* Safari support */
     border-radius: 15px;

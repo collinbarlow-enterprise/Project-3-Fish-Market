@@ -1,18 +1,23 @@
 .PastOrdersDiv {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    margin-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 .PastOrdersDetails {
     grid-column: 2 / span 10;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px 10px 25px 10px;
+    line-height: 1.6;
 }
 
 .PastOrdersInfoContainer {
    grid-column: span 10;
    margin-bottom: 25px;
+   
   
 }
 
@@ -26,4 +31,9 @@
 
 .POItemsContainer {
     grid-column: span 10;
+}
+
+.orderDeleteButton {
+    align-self: center;
+    grid-column: 6 / span 2;
 }
