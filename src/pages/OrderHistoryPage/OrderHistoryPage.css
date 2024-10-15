@@ -1,7 +1,13 @@
 .OrderHistoryPage {
-
+background-color: rgba(180, 220, 220, 1);
+height: 100%;
+width: 100%;
 }
 
-.OrderHistoryPage aside {
-
+.OrderHistoryPage h3 {
+        font-size: 3.5rem;
+        grid-column:  2 / span 8;
+        padding-top: 50px;
+        padding-left: 50px;
+        margin-top: 0;
 }

@@ -1,0 +1,29 @@
+.PastOrdersDiv {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-bottom: 50px;
+}
+
+.PastOrdersDetails {
+    grid-column: 2 / span 10;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.PastOrdersInfoContainer {
+   grid-column: span 10;
+   margin-bottom: 25px;
+  
+}
+
+.PastOrdersInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(255, 204, 153, 1);
+}
+
+
+.POItemsContainer {
+    grid-column: span 10;
+}

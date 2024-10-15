@@ -15,7 +15,7 @@ export default function PastOrders({ pastOrders, handleDelete }) {
 
 
   return (
-    <div className='PastOrdersDiv'>
+    <div>
       {paidOrders}
     </div>
   )
