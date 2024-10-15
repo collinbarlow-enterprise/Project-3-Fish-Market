@@ -1,0 +1,118 @@
+/* is the div that represents the page */
+/* set background color */
+.fishDetailComponent {
+    background-color: rgba(180, 220, 220, 1);
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    /* grid-template-rows: repeat(1, 1fr); */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.25rem;
+}
+
+.fishDetailComponent2 {}
+
+/* is the div that houses the card */
+/* give box shadow */
+/* give color */
+/* set position? set grid? */
+.fishDetailContainer {
+    background-color: whitesmoke;
+    padding: 25px 25px;
+    display: grid;
+    grid-template-areas:
+        "name name name  image nutrionalInfo"
+        "taste taste taste taste  nutrionalInfo"
+        "taste taste taste taste nutrionalInfo"
+        "taste taste taste taste nutrionalInfo"
+        "taste taste taste taste nutrionalInfo"
+        ". . button button ."
+    ;
+
+}
+
+.fishDetailContainer h3 {
+    font-size: 3.5rem;
+}
+
+/* is the card that houses all the info */
+/* create grid area matrix */
+.fishDetailCard {}
+
+
+/* header */
+/* needs to be larger */
+/* can give glassmorphic effect by stacking different panes on top of each other */
+.fishName {
+    grid-area: name;
+    width: 95%;
+    height: auto;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: 25px;
+    padding: 25px;
+
+}
+
+
+
+.nutritionalInformation {
+    grid-area: nutrionalInfo;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: 25px;
+    padding: 25px;
+
+}
+
+.tasteColor {
+    grid-area: taste;
+    margin: 25px;
+
+    line-height: 1.6;
+    /* width: 95%; */
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.fishImage {
+    grid-area: image;
+    margin: 25px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.homeButton {
+    display: flex;
+    justify-self: center;
+    grid-area: button;
+    margin: 25px;
+}
+
+.homeButton button {
+    padding: 25px;
+}

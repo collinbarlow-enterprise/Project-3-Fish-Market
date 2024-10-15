@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import * as fishAPI from '../../utilities/fish-api'
+import './FishDetail.css'
 
 export default function FishDetail({ param }) {
   const [fishDetail, setFishDetail] = useState([]);
@@ -30,36 +31,42 @@ export default function FishDetail({ param }) {
   const fishParam = fishDetail.find((item) => item.speciesName === param);
 
   return (
-    <div className='FishDetail container'>
+    <div className='fishDetailComponent2'>
       {fishParam && (
         <>
-          <div className=''>
-            <div className=''>
-              <div>Name: <br /> {fishParam.speciesName}, otherwise known as {fishParam.altName}</div>
-              <br />
-              <div>Nutritional Information:</div>
-              <ul>
-                <li>Calories: {fishParam.calories}</li>
-                <li>Protein: {fishParam.protein}</li>
-                <li>Total Fat: {fishParam.totalFat}</li>
-                <li>Serving Size: {fishParam.servingWeight}</li>
-              </ul>
+          <div className='fishDetailContainer'>
+
+              <div className="fishName">
+                <h3>{fishParam.speciesName} // {fishParam.altName}</h3>
+              </div>
+
+              <div className="nutritionalInformation">
+                <h3>Nutritional Information</h3>
+                <ul>
+                  <li>Calories: {fishParam.calories}</li>
+                  <li>Protein: {fishParam.protein}</li>
+                  <li>Total Fat: {fishParam.totalFat}</li>
+                  <li>Serving Size: {fishParam.servingWeight}</li>
+                </ul>
+              </div>
+         
+
+            <div className='tasteColor'>
+              {fishParam.taste &&
+                (<div>{fishParam.taste}</div>)}
+              {fishParam.color &&
+                (<div>{fishParam.color}</div>)}
             </div>
-            <div className=''>
-              {fishParam.taste ? (<div >How has the taste been described:<br /><br />{fishParam.taste}</div>) : null}
-              <br />
-              {fishParam.color ? (<div>What color should you expect:<br /><br />{fishParam.color}</div>) : null}
+            <div className='fishImage'>
+              <img src={fishParam.imgUrl} />
             </div>
-            <div className=''>
-              <img src={fishParam.imgUrl}/>
+
+            <div className='homeButton' >
+              <button onClick={() => { backToHome() }}>Continue Shopping</button>
             </div>
-          </div>
-          <div className='row' >
-            <button onClick={() => { backToHome() }}>Continue Shopping</button>
-          </div>
+            </div>
         </>
       )}
     </div>
-
   )
 }
