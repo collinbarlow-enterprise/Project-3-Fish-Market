@@ -16,7 +16,7 @@
 .cartOrderDetailOrderTotal {
   padding: 20px 0;
   text-align: center;
-  grid-column: 5 /span 2;
+  grid-column: 4 /span 4;
   background-color: white;
   border-width: 1px;
   border-style: solid;
@@ -24,3 +24,28 @@
   margin: 20px;
 
 }
+
+@media (max-width:900px) {
+  .cartOrderDetail {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .cartOrderDetailLineItemsMap {
+    grid-column: 2 / span 6;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .cartOrderDetailOrderTotal { 
+  grid-column: 3 / span 4
+  }
+}
+/* @media (max-width:) {
+  .cartOrderDetail {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cartOrderDetailLineItemsMap {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+} */

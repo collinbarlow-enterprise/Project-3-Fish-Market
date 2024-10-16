@@ -12,7 +12,9 @@
     font-size: 2.25rem;
 }
 
-.fishDetailComponent2 {}
+.fishDetailComponent2 {
+    height: inherit;
+}
 
 /* is the div that houses the card */
 /* give box shadow */
@@ -115,4 +117,16 @@
 
 .homeButton button {
     padding: 25px;
+}
+
+@media (max-width: 1144px) {
+  .fishDetailContainer {
+    display: grid;
+    grid-template-areas:
+        "name"
+        "image"
+        "taste"
+        "nutrionalInfo"
+        "button"
+  }
 }

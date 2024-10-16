@@ -23,6 +23,7 @@
     grid-column: span 14; /* Takes full width */
     height: 75dvh;
     background-image: url("../../../Images/oceanicLuxHeroImage.webp");
+    background-size: cover;
 }
 
 .headerGrid {
@@ -83,9 +84,12 @@
     padding: 25px;
     grid-column: 2 / span 8;
     line-height: 1.6;
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    /* display: grid; */
+    /* grid-template-rows: repeat(4, 1fr); */
     font-size: 2rem;
+
+    display: flex;
+    flex-direction: column;
 
     background-color: white;
     backdrop-filter: blur(10px); /* Adds frosted glass effect */
@@ -97,20 +101,13 @@
 .aboutFlex p {
     font-weight: 500;
     font-size: 2.5rem;
-    margin-bottom: 0px
+    margin: 25px 0px
 }
 
 .cartContainer {
     background-color: rgba(230, 230, 230, 1);
     border-bottom: 2px solid rgba(255, 204, 153, 1);
     grid-column: span 14;
-}
-
-.cartCheckoutContainer {
-}
-
-.cartOrderDetailContainer {
- /* Ensures it spans the right columns */
 }
 
 .productContainer {
@@ -123,6 +120,63 @@
 
 .productFishContainer {
     /* background-color: yellow; */
-    display: grid;
+    /* display: grid; */
     grid-column: 2 / span 8;
+}
+
+@media (max-width: 1024px) {
+    .gridContainer {}
+    .headerGrid {}
+    .aboutContainer {}
+    .aboutContent {}
+    .aboutFlex {}
+    .productContainer {}
+}
+@media (max-width: 1025px) {
+    .gridContainer {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .headerGrid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .aboutContainer {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .aboutContent {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .aboutFlex {
+        /* display: grid; */
+        /* grid-template-columns: repeat(1, 1fr); */
+    }
+    .productContainer {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+    }
+
+    img {
+        max-width: 250px;
+        height: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .headerContainer h1 {
+        font-size: 5rem;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+    .gridContainer h3 {
+        font-size: 3.5rem;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+
+    .aboutFlex p {
+        font-size: 2rem;
+    }
 }
