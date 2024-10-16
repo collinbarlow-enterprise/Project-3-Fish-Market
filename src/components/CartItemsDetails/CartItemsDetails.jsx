@@ -10,7 +10,7 @@ export default function CartItemsDetails({ item }) {
       <div className="cartFishOrderCardWrapper">
         <div className="cartFishOrderCardWrapper2">
           <div className="cartFishOrderCardImage">
-            <img src={item.item.imgUrl} />
+            <img src={item.item.imgUrl} alt='Fresh Fish Meat'/>
           </div>
           <div className="cartFishOrderCardInfo">
             <div className="cartIndividualMetrics"> {item.item.speciesName}</div>

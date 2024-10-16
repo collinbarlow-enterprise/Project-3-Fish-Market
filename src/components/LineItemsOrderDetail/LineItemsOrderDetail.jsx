@@ -9,7 +9,7 @@ export default function LineItemsOrderDetail({ lineItem, handleChangeQty }) {
         <div className="cartFishOrderCardWrapper">
           <div className="cartFishOrderCardWrapper2">
             <div className="cartFishOrderCardImage">
-              <img src={lineItem.item.imgUrl} />
+              <img src={lineItem.item.imgUrl} alt='Fresh Fish Meat'/>
             </div>
             <div className="cartFishOrderCardInfo">
               <div className="cartIndividualMetrics"> {lineItem.item.speciesName}</div>

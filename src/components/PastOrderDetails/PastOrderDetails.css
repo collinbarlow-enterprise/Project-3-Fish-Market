@@ -36,4 +36,5 @@
 .orderDeleteButton {
     align-self: center;
     grid-column: 6 / span 2;
+    margin-top: 25px;
 }

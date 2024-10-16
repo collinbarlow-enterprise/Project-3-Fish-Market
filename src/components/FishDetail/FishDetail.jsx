@@ -58,7 +58,7 @@ export default function FishDetail({ param }) {
                 (<div>{fishParam.color}</div>)}
             </div>
             <div className='fishImage'>
-              <img src={fishParam.imgUrl} />
+              <img src={fishParam.imgUrl} alt='Fresh Fish Meat' />
             </div>
 
             <div className='homeButton' >

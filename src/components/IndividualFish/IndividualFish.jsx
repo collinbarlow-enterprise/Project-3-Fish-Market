@@ -15,7 +15,7 @@ export default function IndividualFish({ fishes, handleAddToOrder, showFishCompo
       <div className="cartFishOrderCardWrapper">
         <div className="cartFishOrderCardWrapper2">
           <div className="cartFishOrderCardImage">
-            <img src={fishes.imgUrl} />
+            <img src={fishes.imgUrl} alt='Fresh Fish Meat'/>
           </div>
           <div className="cartFishOrderCardInfo">
             <div className="cartIndividualMetrics"> {fishes.speciesName}</div>
