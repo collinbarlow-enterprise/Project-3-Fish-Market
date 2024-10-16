@@ -1,14 +1,11 @@
-/* CSS Custom Properties */
-:root {
-
-}
-
 #root {
   height: 100%;
 }
 
 body {
   margin: 0;
+  height: 100dvh;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Noto Sans', sans-serif, 'Helevtica Neue';
@@ -36,21 +33,6 @@ button:hover {
 
 .scroll-y {
   overflow-y: scroll;
-}
-
-.form-container {
-  padding: 3vmin;
-  border-radius: 1vmin;
-}
-
-p.error-message {
-  color: var(--orange);
-  text-align: center;
-}
-
-form {
-  gap: 1.25vmin;
-  color: var(--text-light);
 }
 
 

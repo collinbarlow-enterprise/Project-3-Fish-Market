@@ -9,9 +9,7 @@ export default function POIndividualItems({ items, index }) {
     <div className='POIndividual'>
       <div className="POIMetrics">
         <div>Item {productIndex}:</div>
-        <div className="fishName">{items.item.speciesName}</div>
-
-        {/* Corrected ternary for singular/plural "lb" */}
+        <div className="POFishName">{items.item.speciesName}</div>
         <div>
           {items.quantity > 1
             ? `${items.quantity} lbs @ $${items.extPrice} / lb`

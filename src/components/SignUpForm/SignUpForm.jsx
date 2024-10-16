@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { signUp } from '../../utilities/users-service';
+import './SignUpForm.css'
 
 export default class SignUpForm extends Component {
   state = {
@@ -35,17 +36,19 @@ export default class SignUpForm extends Component {
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (
-      <div>
-        <div className="form-container col-12" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
-          <form autoComplete="off" onSubmit={this.handleSubmit}>
-            <input className='col-12' style={{ flex: '1', margin: '10px' }} placeholder='NAME' type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
-            <input className='col-12' style={{ flex: '1', margin: '10px' }} placeholder='EMAIL' type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
-            <input className='col-12' style={{ flex: '1', margin: '10px' }} placeholder='PASSWORD' type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
-            <input className='col-12' style={{ flex: '1', margin: '10px' }} placeholder='CONFIRM PASSWORD' type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
-            <button type="submit" style={{ flex: '1', margin: '10px', alignSelf: 'center' }} disabled={disable}>SIGN UP</button>
+      <div className='formParent'>
+        {/* <div className="" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}> */}
+        <div className="formContainer" >
+          <form className='form' autoComplete="off" onSubmit={this.handleSubmit}>
+            {/* <input className='' style={{ flex: '1', margin: '10px' }} placeholder='NAME' type="text" name="name" value={this.state.name} onChange={this.handleChange} required /> */}
+            <input className='formField' placeholder='NAME' type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
+            <input className='formField' placeholder='EMAIL' type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
+            <input className='formField' placeholder='PASSWORD' type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
+            <input className='formField' placeholder='CONFIRM PASSWORD' type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
+            <button className='formButton' type="submit" disabled={disable}>SIGN UP</button>
           </form>
         </div>
-        <p className="error-message">&nbsp;{this.state.error}</p>
+        <p className="formError">&nbsp;{this.state.error}</p>
       </div>
     );
   }

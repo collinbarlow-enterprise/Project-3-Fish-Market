@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
+import '../SignUpForm/SignUpForm.css'
+
 
 export default function LoginForm({ setUser }) {
     const [credentials, setCredentials] = useState({
@@ -24,15 +26,19 @@ export default function LoginForm({ setUser }) {
     }
 
     return (
-        <div>
-            <div className="form-container col-12" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
-                <form autoComplete="off" onSubmit={handleSubmit} style={{ width: '100%' }}>
-                    <input className='col-12' placeholder='EMAIL' type="text" name="email" value={credentials.email} onChange={handleChange} required style={{ flex: '1', margin: '10px' }} />
-                    <input className='col-12' type="password" placeholder='PASSWORD' name="password" value={credentials.password} onChange={handleChange} required style={{ flex: '1', margin: '10px' }} />
-                    <button type="submit" style={{ alignSelf: 'center', margin: '10px' }}>LOG IN</button>
+        <div className='formParent'>
+            <div className="formContainer" >
+                <form className='form' autoComplete="off" onSubmit={handleSubmit}>
+                    <div className='formTip'>
+                        <p>For Demo Purposes Use</p>
+                        <p>Email: 'test@test.com' & Password: 'test'</p>
+                    </div>
+                    <input className='formField' placeholder='EMAIL' type="text" name="email" value={credentials.email} onChange={handleChange} required />
+                    <input className='formField' type="password" placeholder='PASSWORD' name="password" value={credentials.password} onChange={handleChange} required />
+                    <button className='formButton' type="submit" >LOG IN</button>
                 </form>
             </div>
-            <p className="error-message">&nbsp;{error}</p>
+            <p className="formError">&nbsp;{error}</p>
         </div>
     );
 }

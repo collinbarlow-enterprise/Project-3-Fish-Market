@@ -7,11 +7,11 @@ export default function AuthPage({ setUser }) {
   const [showLogin, setShowLogin] = useState(true);
 
   return (
-    <main className="AuthPage">
-      <div>
-        <h2 >AUTH PAGE HEADER</h2> 
-      {showLogin ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} />}
-      <h3 onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'Do you want to register?' : 'Do you want to log in?'}</h3> 
+    <main className="authPage">
+      <div className='authContainer'>
+        <h3 className='authHeader'>Welcome to Oceanic Lux</h3>
+        {showLogin ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} />}
+        <h3 className='authSwitch' onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'Do you want to register?' : 'Do you want to log in?'}</h3>
       </div>
     </main>
   );

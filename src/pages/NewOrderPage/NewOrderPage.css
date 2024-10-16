@@ -1,5 +1,5 @@
 .gridContainer {
-    background-color: lightblue;
+    /* background-color: lightblue; */
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     /* gap: 20px; Optional: Adds space between grid items */
@@ -22,7 +22,7 @@
     border-bottom: 2px solid rgba(255, 204, 153, 1);
     grid-column: span 14; /* Takes full width */
     height: 75dvh;
-    background-image: url("../../../public/Images/oceanicLuxHeroImage.webp");
+    background-image: url("../../../Images/oceanicLuxHeroImage.webp");
 }
 
 .headerGrid {
