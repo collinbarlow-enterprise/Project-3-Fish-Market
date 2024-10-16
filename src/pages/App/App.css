@@ -13,6 +13,8 @@
     position: sticky;
     background-color: white;
     padding-right: 50px;
+    border-bottom: 2px solid rgba(255, 204, 153, 1);
+
 }
 
 img {
@@ -36,6 +38,12 @@ img {
 }
 @media (max-width: 500px) {
     .navContainer {
-    height: 150px;
+    height: 50px;
+    font-size: 14px;
+    justify-content: center;
+
+    }
+
+    .navContainer nav{
     }
 }

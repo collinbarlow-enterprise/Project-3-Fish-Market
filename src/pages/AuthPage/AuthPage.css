@@ -1,6 +1,6 @@
 .authPage {
     /* display: grid; */
-    height: 100dvh;
+    height: 100%;
     width: 100%;
     /* grid-template-columns: repeat(12, 1fr); */
     background-color: rgba(180, 220, 220, 1);
@@ -9,6 +9,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 2000;
 
 }
 
@@ -44,4 +45,21 @@
 .authSwitch:hover {
     background-color: rgba(235, 235, 235, .7);
     cursor: pointer;
+}
+
+@media (max-width:900px) {
+    .authPage {
+        height: 100%;
+        padding-top: 12.5px;
+        margin-bottom: 50px;
+    }
+    .authContainer {
+        height: 100%;
+        display: grid; 
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .authPage h3 {
+        font-size: 1.5rem;
+        grid-column: span 5;
+    }
 }
