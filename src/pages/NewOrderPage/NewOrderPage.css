@@ -23,6 +23,7 @@
     height: 75dvh;
     background-image: url("../../../Images/oceanicLuxHeroImage.webp");
     background-size: cover;
+    background-position: center;
 }
 
 .headerGrid {
