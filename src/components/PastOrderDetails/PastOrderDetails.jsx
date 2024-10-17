@@ -3,7 +3,6 @@ import POIndividualItems from '../POIndividualItems/POIndividualItems'
 import "./PastOrderDetails.css"
 
 export default function PastOrderDetails({ total, order, item, handleDelete }) {
-  // console.log(order, 'order on PastOrderDetails')
   return (
     <div className='PastOrdersDiv'>
       <div className='PastOrdersDetails'>
