@@ -62,3 +62,9 @@
     }
 
 }
+
+@media (max-width: 900px) {
+    .PastOrdersDiv {
+        font-size: 1rem;
+    }
+}

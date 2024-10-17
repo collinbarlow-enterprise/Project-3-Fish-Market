@@ -37,6 +37,12 @@
     }
     .POIImage {
         justify-content: center;
+
+    }
+
+    .POIImage img {
+        max-width: 200px;
+        height: auto;
     }
     .POIMetrics {
         justify-self: center;

@@ -17,3 +17,9 @@
 .OrderHistoryPage button:hover {
     background-color: rgba(240, 240, 240, 1)
 }
+
+@media (max-width: 900px) {
+    .OrderHistoryPage h3 {
+        font-size: 2rem;
+    }
+}
