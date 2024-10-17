@@ -1,11 +1,8 @@
-/* is the div that represents the page */
-/* set background color */
 .fishDetailComponent {
     background-color: rgba(180, 220, 220, 1);
     height: 100dvh;
     width: 100%;
     display: flex;
-    /* grid-template-rows: repeat(1, 1fr); */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -14,14 +11,13 @@
 
 .fishDetailComponent2 {
     height: inherit;
+    height: 90%;
+    display: grid;
 }
 
-/* is the div that houses the card */
-/* give box shadow */
-/* give color */
-/* set position? set grid? */
 .fishDetailContainer {
     background-color: whitesmoke;
+    justify-content: center;
     padding: 25px 25px;
     display: grid;
     grid-template-areas:
@@ -39,14 +35,7 @@
     font-size: 3.5rem;
 }
 
-/* is the card that houses all the info */
-/* create grid area matrix */
-.fishDetailCard {}
 
-
-/* header */
-/* needs to be larger */
-/* can give glassmorphic effect by stacking different panes on top of each other */
 .fishName {
     grid-area: name;
     width: 95%;
@@ -59,10 +48,7 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     margin: 25px;
     padding: 25px;
-
 }
-
-
 
 .nutritionalInformation {
     grid-area: nutrionalInfo;
@@ -80,9 +66,7 @@
 .tasteColor {
     grid-area: taste;
     margin: 25px;
-
     line-height: 1.6;
-    /* width: 95%; */
     padding: 25px;
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -105,7 +89,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .homeButton {
@@ -128,5 +111,22 @@
         "taste"
         "nutrionalInfo"
         "button"
+  }
+}
+@media (max-width: 900px) {
+    .fishDetailComponent {
+        font-size: 1.5rem;
+    }
+.fishDetailContainer {
+    padding: 0px;
+    margin: 0px;
+}
+  .fishDetailContainer h3{
+    font-size: 2rem;
+  }
+
+  .fishName {
+    width: 100%;
+    margin: 0px;
   }
 }

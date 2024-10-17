@@ -18,7 +18,6 @@
 }
 
 .heroImageContainer {
-    /* background-color: lightgreen; */
     border-bottom: 2px solid rgba(255, 204, 153, 1);
     grid-column: span 14; /* Takes full width */
     height: 75dvh;
@@ -27,7 +26,6 @@
 }
 
 .headerGrid {
-    /* padding: 10px 10px 0px 10px; */
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     backdrop-filter: blur(10px);
@@ -36,23 +34,22 @@
 
 .headerContainer {
     grid-column: span 14;
-    padding-top: 25px;
-    
+    padding-top: 25px;    
 }
 
 .headerContainer h1 {
     font-size: 7rem;
     font-weight: 400;
+
 }
 
 .headerContainer h3 {
     font-size: 5rem;
-    margin-top: -20px;
     font-weight: 400;
+    padding: 10px 0px;
 }
 
 .aboutContainer {
-    /* background-color: rgba(200, 240, 240, 1); */
     background-color: rgba(180, 220, 220, 1);
     grid-column: span 14; /* Takes full width */
    display: grid; /* Make this a grid container */
@@ -61,22 +58,12 @@
 }
 
 .aboutContent {
-    /* padding: 50px; */
-    /* background-color: brown; */
     grid-column: span 10; /* Start from column 2 and span 10 columns */
     display: grid; 
     grid-template-columns: repeat(10, 1fr);
-
-    /* background: rgba(255, 255, 255, 0.2);  */
-    /* background: linear-gradient(280deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15)); */
-
-    /* border-radius: 15px; */
-    /* padding: 20px; */
-    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); Soft shadow for depth */
-    /* box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2); Larger shadow for more depth */
+    padding: 20px;
     backdrop-filter: blur(10px); /* The blur effect */
     -webkit-backdrop-filter: blur(10px); /* Safari support */
-    /* border: 1px solid rgba(255, 255, 255, 0.3); Light border */
 }
 
 .aboutFlex {
@@ -84,13 +71,9 @@
     padding: 25px;
     grid-column: 2 / span 8;
     line-height: 1.6;
-    /* display: grid; */
-    /* grid-template-rows: repeat(4, 1fr); */
     font-size: 2rem;
-
     display: flex;
     flex-direction: column;
-
     background-color: white;
     backdrop-filter: blur(10px); /* Adds frosted glass effect */
     -webkit-backdrop-filter: blur(10px); /* Safari support */
@@ -100,7 +83,7 @@
 
 .aboutFlex p {
     font-weight: 500;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     margin: 25px 0px
 }
 
@@ -119,19 +102,17 @@
 }
 
 .productFishContainer {
-    /* background-color: yellow; */
-    /* display: grid; */
     grid-column: 2 / span 8;
 }
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
     .gridContainer {}
     .headerGrid {}
     .aboutContainer {}
     .aboutContent {}
     .aboutFlex {}
     .productContainer {}
-}
+} */
 @media (max-width: 1025px) {
     .gridContainer {
         display: grid;
@@ -149,15 +130,10 @@
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
-    .aboutFlex {
-        /* display: grid; */
-        /* grid-template-columns: repeat(1, 1fr); */
-    }
     .productContainer {
         display: grid;
         grid-template-columns: repeat(10, 1fr);
     }
-
     img {
         max-width: 250px;
         height: auto;

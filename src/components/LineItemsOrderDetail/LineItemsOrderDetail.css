@@ -5,29 +5,24 @@
     justify-content: space-between;
     border-radius: 5px;
     text-align: center;
-    /* Note: Duplicate rules commented out. Text-align center is kept. */
-    /* background-color: white; */
-    /* padding: 15px; */
-    /* border: 1px solid #ccc; */
+
 }
 
 .cartFishOrderCardImage {
     display: flex;
     justify-content: center;
-    /* Note: Identical rule in both sheets, no changes. */
 }
 
 .cartFishOrderCard {
-    /* background-color: rgb(180, 220, 180);  */
     background-color: rgba(250, 250, 250, 1);
     backdrop-filter: blur(10px); /* Adds frosted glass effect */
     -webkit-backdrop-filter: blur(10px); /* Safari support */
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(200, 240, 240, 1); 
-    padding: 10px; /* From first sheet. Second sheet had 15px padding commented out */
-    border: 2px solid rgb(150, 190, 190); /* From first sheet */
-    border-radius: 15px; /* Identical in both sheets */
-    text-align: start; /* Identical in both sheets */
+    padding: 10px; 
+    border: 2px solid rgb(150, 190, 190);
+    border-radius: 15px; 
+    text-align: start; 
     /* background-color: rgba(200, 240, 240, 0.6); */
     backdrop-filter: blur(10px); /* Adds frosted glass effect */
     -webkit-backdrop-filter: blur(10px); /* Safari support */

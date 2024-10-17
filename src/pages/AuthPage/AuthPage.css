@@ -1,8 +1,6 @@
 .authPage {
-    /* display: grid; */
     height: 100%;
     width: 100%;
-    /* grid-template-columns: repeat(12, 1fr); */
     background-color: rgba(180, 220, 220, 1);
     border-bottom: 2px solid rgba(255, 204, 153, 1);
     display: flex;
@@ -30,7 +28,6 @@
     backdrop-filter: blur(20px); /* The blur effect */
     -webkit-backdrop-filter: blur(10px); /* Safari support */
     grid-column: 4 / span 6;
-    /* width: fit-content; */
     border-radius: 15px;
     padding: 25px;
     align-self: center;
@@ -39,7 +36,6 @@
 
 .authSwitch {
     background-color: rgba(255,255,255, .7);
-    /* width: fit-content; */
 }
 
 .authSwitch:hover {
