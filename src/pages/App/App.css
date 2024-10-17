@@ -32,6 +32,9 @@ img {
 }
 
 @media (max-width: 900px) {
+    .App {
+        font-size: 1.75rem;
+    }
     .navContainer {
     height: 100px;
     }
