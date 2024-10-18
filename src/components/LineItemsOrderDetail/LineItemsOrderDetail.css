@@ -59,3 +59,12 @@
     align-items: stretch;
     /* Note: First sheet included justify-content: space-between, second sheet had justify-item commented out */
 }
+
+@media (max-width: 500px) {
+    .cartFishOrderCardInfo {
+        font-size: 1.5rem;
+    }
+    .cartIndividualMetrics {
+        margin-top: 12px;
+    };
+}

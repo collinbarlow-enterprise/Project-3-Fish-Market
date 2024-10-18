@@ -21,8 +21,8 @@ export default function LineItemsOrderDetail({ lineItem, handleChangeQty }) {
                 <div>Price: </div>
                 <div>${lineItem.extPrice}</div>
               </div>
-              <button className="cartButtons" onClick={() => handleChangeQty(lineItem.item._id, lineItem.quantity + 1)}>Add</button>
-              <button className="cartButtons" onClick={() => handleChangeQty(lineItem.item._id, lineItem.quantity - 1)}>Remove</button>
+              <button id="cartButtons" onClick={() => handleChangeQty(lineItem.item._id, lineItem.quantity + 1)}>Add</button>
+              <button id="cartButtons" onClick={() => handleChangeQty(lineItem.item._id, lineItem.quantity - 1)}>Remove</button>
             </div>
           </div>
         </div>

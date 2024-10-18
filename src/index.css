@@ -33,11 +33,15 @@ button:hover {
   background-color: rgba(180, 220, 220, 1);
 }
 
-
-
 .scroll-y {
   overflow-y: scroll;
 }
 
-
+@media (max-width: 500px) {
+  button {
+    padding: 5px;
+    width: 80%;
+    align-self: center
+  }
+}
 
